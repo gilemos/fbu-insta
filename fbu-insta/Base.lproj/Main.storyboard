@@ -159,6 +159,57 @@
             </objects>
             <point key="canvasLocation" x="1888" y="100"/>
         </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="Xgg-Yw-ZTG">
+            <objects>
+                <viewController id="8Xb-5O-78X" customClass="ComposeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PKr-pJ-7ft">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="FKC-Px-B1D">
+                                <rect key="frame" x="10" y="102" width="156" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nyA-48-jGh" appends="YES" id="0Cr-J1-zyS"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FCD-BT-Yd5">
+                                <rect key="frame" x="174" y="113" width="220" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="E43-dp-MUn"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="vlR-GU-ksp">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="8vJ-ev-JC7"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="aUG-ip-MUQ">
+                            <connections>
+                                <action selector="tapShare:" destination="8Xb-5O-78X" id="oW3-ue-djT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="FKC-Px-B1D" id="U9h-ev-W7e"/>
+                        <outlet property="textField" destination="FCD-BT-Yd5" id="85s-yl-lIj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t2V-00-d7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nyA-48-jGh">
+                    <connections>
+                        <action selector="tapPicture:" destination="8Xb-5O-78X" id="Hq0-lM-xoj"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3900.0000000000005" y="104.46428571428571"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cun-wH-SuP">
             <objects>
@@ -177,7 +228,28 @@
             </objects>
             <point key="canvasLocation" x="968" y="100"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BOo-4E-8Bb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="07W-nk-8lj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JJA-Oo-Qs3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8Xb-5O-78X" kind="relationship" relationship="rootViewController" id="4sj-7V-wZu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oLv-mb-ab4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2989.8550724637685" y="104.46428571428571"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="image_placeholder" width="375" height="375"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="St9-Ks-4qA"/>
     </inferredMetricsTieBreakers>
