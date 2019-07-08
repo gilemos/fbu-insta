@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		710CD32B22D3DFDE00CD7B0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 710CD32A22D3DFDE00CD7B0C /* AppDelegate.m */; };
+		710CD32E22D3DFDE00CD7B0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710CD32D22D3DFDE00CD7B0C /* ViewController.m */; };
+		710CD33122D3DFDE00CD7B0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710CD32F22D3DFDE00CD7B0C /* Main.storyboard */; };
+		710CD33322D3DFDF00CD7B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 710CD33222D3DFDF00CD7B0C /* Assets.xcassets */; };
+		710CD33622D3DFDF00CD7B0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710CD33422D3DFDF00CD7B0C /* LaunchScreen.storyboard */; };
+		710CD33922D3DFDF00CD7B0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 710CD33822D3DFDF00CD7B0C /* main.m */; };
+		710CD34322D3DFDF00CD7B0C /* fbu_instaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 710CD34222D3DFDF00CD7B0C /* fbu_instaTests.m */; };
+		710CD34E22D3DFDF00CD7B0C /* fbu_instaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 710CD34D22D3DFDF00CD7B0C /* fbu_instaUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		710CD33F22D3DFDF00CD7B0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 710CD31E22D3DFDE00CD7B0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 710CD32522D3DFDE00CD7B0C;
+			remoteInfo = "fbu-insta";
+		};
+		710CD34A22D3DFDF00CD7B0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 710CD31E22D3DFDE00CD7B0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 710CD32522D3DFDE00CD7B0C;
+			remoteInfo = "fbu-insta";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		710CD32622D3DFDE00CD7B0C /* fbu-insta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fbu-insta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		710CD32922D3DFDE00CD7B0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		710CD32A22D3DFDE00CD7B0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		710CD32C22D3DFDE00CD7B0C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		710CD32D22D3DFDE00CD7B0C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		710CD33022D3DFDE00CD7B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		710CD33222D3DFDF00CD7B0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		710CD33522D3DFDF00CD7B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		710CD33722D3DFDF00CD7B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		710CD33822D3DFDF00CD7B0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		710CD33E22D3DFDF00CD7B0C /* fbu-instaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fbu-instaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		710CD34222D3DFDF00CD7B0C /* fbu_instaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fbu_instaTests.m; sourceTree = "<group>"; };
+		710CD34422D3DFDF00CD7B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		710CD34922D3DFDF00CD7B0C /* fbu-instaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fbu-instaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		710CD34D22D3DFDF00CD7B0C /* fbu_instaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fbu_instaUITests.m; sourceTree = "<group>"; };
+		710CD34F22D3DFDF00CD7B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		710CD32322D3DFDE00CD7B0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		710CD33B22D3DFDF00CD7B0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		710CD34622D3DFDF00CD7B0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		710CD31D22D3DFDE00CD7B0C = {
+			isa = PBXGroup;
+			children = (
+				710CD32822D3DFDE00CD7B0C /* fbu-insta */,
+				710CD34122D3DFDF00CD7B0C /* fbu-instaTests */,
+				710CD34C22D3DFDF00CD7B0C /* fbu-instaUITests */,
+				710CD32722D3DFDE00CD7B0C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		710CD32722D3DFDE00CD7B0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				710CD32622D3DFDE00CD7B0C /* fbu-insta.app */,
+				710CD33E22D3DFDF00CD7B0C /* fbu-instaTests.xctest */,
+				710CD34922D3DFDF00CD7B0C /* fbu-instaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		710CD32822D3DFDE00CD7B0C /* fbu-insta */ = {
+			isa = PBXGroup;
+			children = (
+				710CD32922D3DFDE00CD7B0C /* AppDelegate.h */,
+				710CD32A22D3DFDE00CD7B0C /* AppDelegate.m */,
+				710CD32C22D3DFDE00CD7B0C /* ViewController.h */,
+				710CD32D22D3DFDE00CD7B0C /* ViewController.m */,
+				710CD32F22D3DFDE00CD7B0C /* Main.storyboard */,
+				710CD33222D3DFDF00CD7B0C /* Assets.xcassets */,
+				710CD33422D3DFDF00CD7B0C /* LaunchScreen.storyboard */,
+				710CD33722D3DFDF00CD7B0C /* Info.plist */,
+				710CD33822D3DFDF00CD7B0C /* main.m */,
+			);
+			path = "fbu-insta";
+			sourceTree = "<group>";
+		};
+		710CD34122D3DFDF00CD7B0C /* fbu-instaTests */ = {
+			isa = PBXGroup;
+			children = (
+				710CD34222D3DFDF00CD7B0C /* fbu_instaTests.m */,
+				710CD34422D3DFDF00CD7B0C /* Info.plist */,
+			);
+			path = "fbu-instaTests";
+			sourceTree = "<group>";
+		};
+		710CD34C22D3DFDF00CD7B0C /* fbu-instaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				710CD34D22D3DFDF00CD7B0C /* fbu_instaUITests.m */,
+				710CD34F22D3DFDF00CD7B0C /* Info.plist */,
+			);
+			path = "fbu-instaUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		710CD32522D3DFDE00CD7B0C /* fbu-insta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 710CD35222D3DFDF00CD7B0C /* Build configuration list for PBXNativeTarget "fbu-insta" */;
+			buildPhases = (
+				710CD32222D3DFDE00CD7B0C /* Sources */,
+				710CD32322D3DFDE00CD7B0C /* Frameworks */,
+				710CD32422D3DFDE00CD7B0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "fbu-insta";
+			productName = "fbu-insta";
+			productReference = 710CD32622D3DFDE00CD7B0C /* fbu-insta.app */;
+			productType = "com.apple.product-type.application";
+		};
+		710CD33D22D3DFDF00CD7B0C /* fbu-instaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 710CD35522D3DFDF00CD7B0C /* Build configuration list for PBXNativeTarget "fbu-instaTests" */;
+			buildPhases = (
+				710CD33A22D3DFDF00CD7B0C /* Sources */,
+				710CD33B22D3DFDF00CD7B0C /* Frameworks */,
+				710CD33C22D3DFDF00CD7B0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				710CD34022D3DFDF00CD7B0C /* PBXTargetDependency */,
+			);
+			name = "fbu-instaTests";
+			productName = "fbu-instaTests";
+			productReference = 710CD33E22D3DFDF00CD7B0C /* fbu-instaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		710CD34822D3DFDF00CD7B0C /* fbu-instaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 710CD35822D3DFDF00CD7B0C /* Build configuration list for PBXNativeTarget "fbu-instaUITests" */;
+			buildPhases = (
+				710CD34522D3DFDF00CD7B0C /* Sources */,
+				710CD34622D3DFDF00CD7B0C /* Frameworks */,
+				710CD34722D3DFDF00CD7B0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				710CD34B22D3DFDF00CD7B0C /* PBXTargetDependency */,
+			);
+			name = "fbu-instaUITests";
+			productName = "fbu-instaUITests";
+			productReference = 710CD34922D3DFDF00CD7B0C /* fbu-instaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		710CD31E22D3DFDE00CD7B0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = gilemos;
+				TargetAttributes = {
+					710CD32522D3DFDE00CD7B0C = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					710CD33D22D3DFDF00CD7B0C = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 710CD32522D3DFDE00CD7B0C;
+					};
+					710CD34822D3DFDF00CD7B0C = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 710CD32522D3DFDE00CD7B0C;
+					};
+				};
+			};
+			buildConfigurationList = 710CD32122D3DFDE00CD7B0C /* Build configuration list for PBXProject "fbu-insta" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 710CD31D22D3DFDE00CD7B0C;
+			productRefGroup = 710CD32722D3DFDE00CD7B0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				710CD32522D3DFDE00CD7B0C /* fbu-insta */,
+				710CD33D22D3DFDF00CD7B0C /* fbu-instaTests */,
+				710CD34822D3DFDF00CD7B0C /* fbu-instaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		710CD32422D3DFDE00CD7B0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				710CD33622D3DFDF00CD7B0C /* LaunchScreen.storyboard in Resources */,
+				710CD33322D3DFDF00CD7B0C /* Assets.xcassets in Resources */,
+				710CD33122D3DFDE00CD7B0C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		710CD33C22D3DFDF00CD7B0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		710CD34722D3DFDF00CD7B0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		710CD32222D3DFDE00CD7B0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				710CD32E22D3DFDE00CD7B0C /* ViewController.m in Sources */,
+				710CD33922D3DFDF00CD7B0C /* main.m in Sources */,
+				710CD32B22D3DFDE00CD7B0C /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		710CD33A22D3DFDF00CD7B0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				710CD34322D3DFDF00CD7B0C /* fbu_instaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		710CD34522D3DFDF00CD7B0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				710CD34E22D3DFDF00CD7B0C /* fbu_instaUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		710CD34022D3DFDF00CD7B0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 710CD32522D3DFDE00CD7B0C /* fbu-insta */;
+			targetProxy = 710CD33F22D3DFDF00CD7B0C /* PBXContainerItemProxy */;
+		};
+		710CD34B22D3DFDF00CD7B0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 710CD32522D3DFDE00CD7B0C /* fbu-insta */;
+			targetProxy = 710CD34A22D3DFDF00CD7B0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		710CD32F22D3DFDE00CD7B0C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				710CD33022D3DFDE00CD7B0C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		710CD33422D3DFDF00CD7B0C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				710CD33522D3DFDF00CD7B0C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		710CD35022D3DFDF00CD7B0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		710CD35122D3DFDF00CD7B0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		710CD35322D3DFDF00CD7B0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MS6YSZM253;
+				INFOPLIST_FILE = "fbu-insta/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.fbu-insta";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		710CD35422D3DFDF00CD7B0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MS6YSZM253;
+				INFOPLIST_FILE = "fbu-insta/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.fbu-insta";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		710CD35622D3DFDF00CD7B0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MS6YSZM253;
+				INFOPLIST_FILE = "fbu-instaTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.fbu-instaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fbu-insta.app/fbu-insta";
+			};
+			name = Debug;
+		};
+		710CD35722D3DFDF00CD7B0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MS6YSZM253;
+				INFOPLIST_FILE = "fbu-instaTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.fbu-instaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fbu-insta.app/fbu-insta";
+			};
+			name = Release;
+		};
+		710CD35922D3DFDF00CD7B0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MS6YSZM253;
+				INFOPLIST_FILE = "fbu-instaUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.fbu-instaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "fbu-insta";
+			};
+			name = Debug;
+		};
+		710CD35A22D3DFDF00CD7B0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MS6YSZM253;
+				INFOPLIST_FILE = "fbu-instaUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.fbu-instaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "fbu-insta";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		710CD32122D3DFDE00CD7B0C /* Build configuration list for PBXProject "fbu-insta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				710CD35022D3DFDF00CD7B0C /* Debug */,
+				710CD35122D3DFDF00CD7B0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		710CD35222D3DFDF00CD7B0C /* Build configuration list for PBXNativeTarget "fbu-insta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				710CD35322D3DFDF00CD7B0C /* Debug */,
+				710CD35422D3DFDF00CD7B0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		710CD35522D3DFDF00CD7B0C /* Build configuration list for PBXNativeTarget "fbu-instaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				710CD35622D3DFDF00CD7B0C /* Debug */,
+				710CD35722D3DFDF00CD7B0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		710CD35822D3DFDF00CD7B0C /* Build configuration list for PBXNativeTarget "fbu-instaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				710CD35922D3DFDF00CD7B0C /* Debug */,
+				710CD35A22D3DFDF00CD7B0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 710CD31E22D3DFDE00CD7B0C /* Project object */;
+}
