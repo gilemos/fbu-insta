@@ -127,6 +127,7 @@
                         <outlet property="emailTextField" destination="IER-u3-bZQ" id="1Cp-rL-tGs"/>
                         <outlet property="passwordTextField" destination="l1z-7a-pfA" id="MKf-xW-ca5"/>
                         <outlet property="usernameTextField" destination="kjy-fV-lxJ" id="3Mh-nA-Zyi"/>
+                        <segue destination="MNR-p3-jLA" kind="presentation" identifier="logedInSegue" id="St9-Ks-4qA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToH-uy-l0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -136,7 +137,7 @@
         <!--Home Feed-->
         <scene sceneID="a10-hM-7EX">
             <objects>
-                <viewController id="pI6-fn-83J" customClass="HomeFeedViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthenticatedViewController" id="pI6-fn-83J" customClass="HomeFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3rK-gA-ZQY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,4 +178,7 @@
             <point key="canvasLocation" x="968" y="100"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="St9-Ks-4qA"/>
+    </inferredMetricsTieBreakers>
 </document>

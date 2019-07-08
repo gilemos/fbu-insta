@@ -586,6 +586,7 @@
 			baseConfigurationReference = C08B4966925AF9FF4CEF9803 /* Pods-fbu-insta.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MS6YSZM253;
 				INFOPLIST_FILE = "fbu-insta/Info.plist";
@@ -593,8 +594,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.fbu-insta";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gigi18377.insta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -604,6 +606,7 @@
 			baseConfigurationReference = 3E4A4766D46D69A7661C1B54 /* Pods-fbu-insta.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MS6YSZM253;
 				INFOPLIST_FILE = "fbu-insta/Info.plist";
@@ -611,8 +614,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.fbu-insta";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gigi18377.insta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
