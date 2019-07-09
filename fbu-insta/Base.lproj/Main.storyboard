@@ -137,7 +137,7 @@
         <!--Home Feed-->
         <scene sceneID="a10-hM-7EX">
             <objects>
-                <viewController storyboardIdentifier="AuthenticatedViewController" id="pI6-fn-83J" customClass="HomeFeedViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeFeedViewController" id="pI6-fn-83J" customClass="HomeFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3rK-gA-ZQY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -271,7 +271,7 @@
                     <navigationItem key="navigationItem" id="vlR-GU-ksp">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="8vJ-ev-JC7">
                             <connections>
-                                <segue destination="pI6-fn-83J" kind="presentation" id="ss7-Sq-QvX"/>
+                                <segue destination="MNR-p3-jLA" kind="presentation" id="tz5-4N-UNq"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Share" id="aUG-ip-MUQ">
@@ -298,7 +298,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Cun-wH-SuP">
             <objects>
-                <navigationController storyboardIdentifier="homefeednavigationcontroller" automaticallyAdjustsScrollViewInsets="NO" id="MNR-p3-jLA" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AuthenticatedViewController" automaticallyAdjustsScrollViewInsets="NO" id="MNR-p3-jLA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5pS-5E-1Ra">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -337,8 +337,6 @@
         <image name="insta_camera_btn" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XtU-yF-8hG"/>
-        <segue reference="St9-Ks-4qA"/>
-        <segue reference="ss7-Sq-QvX"/>
+        <segue reference="tz5-4N-UNq"/>
     </inferredMetricsTieBreakers>
 </document>
