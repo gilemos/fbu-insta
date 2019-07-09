@@ -34,7 +34,6 @@
     CGSize imageSize = originalImage.size;
     self.curImage = [self resizeImage:originalImage withSize:imageSize];
     self.imageView.image = self.curImage;
-    
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }

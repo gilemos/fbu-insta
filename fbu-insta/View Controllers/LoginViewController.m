@@ -21,7 +21,11 @@
 #pragma mark - View LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //Setting up background image
+    UIImage *backgroundImage = [UIImage imageNamed:@"instagramBackground"];
+    UIImageView *backgroundImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
+    backgroundImageView.image=backgroundImage;
+    [self.view insertSubview:backgroundImageView atIndex:0];
 }
 
 #pragma mark - Buttons Functions
