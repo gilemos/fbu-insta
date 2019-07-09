@@ -19,11 +19,18 @@
 
 @implementation RegisterViewController
 
+#pragma mark - View lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
+#pragma mark - Buttons functions
+- (IBAction)tapRegister:(id)sender {
+    [self registerUser];
+}
+
+#pragma mark - Helper methods
 - (void)registerUser {
     // initialize a user object
     PFUser *newUser = [PFUser user];
@@ -44,9 +51,7 @@
         }
     }];
 }
-- (IBAction)tapRegister:(id)sender {
-    [self registerUser];
-}
+
 /*
 #pragma mark - Navigation
 

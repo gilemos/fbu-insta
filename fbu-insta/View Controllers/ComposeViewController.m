@@ -17,10 +17,28 @@
 
 @implementation ComposeViewController
 
+#pragma mark - View lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+#pragma mark - UIIMagePicker protocol
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // Get the image captured by the UIImagePickerController
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    
+    // Do something with the images (based on your use case)
+    self.curImage = originalImage;
+    
+    self.imageView.image = self.curImage;
+    // Dismiss UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Methods to take a picture
 - (IBAction)tapPicture:(id)sender {
     //Instatiating the UIImagePickerController
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
@@ -36,19 +54,8 @@
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    
-    // Get the image captured by the UIImagePickerController
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-    
-    // Do something with the images (based on your use case)
-    self.curImage = originalImage;
-    
-    self.imageView.image = self.curImage;
-    // Dismiss UIImagePickerController to go back to your original view controller
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+
+#pragma mark - Top Screen Buttons
 - (IBAction)tapShare:(id)sender {
     if(self.curImage != nil) {
         [Post postUserImage:self.curImage withCaption:self.textField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {

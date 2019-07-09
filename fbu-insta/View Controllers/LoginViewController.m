@@ -18,11 +18,18 @@
 
 @implementation LoginViewController
 
+#pragma mark - View LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
+#pragma mark - Buttons Functions
+- (IBAction)tapLogin:(id)sender {
+    [self loginUser];
+}
+
+#pragma mark - Helper methods
 - (void)loginUser {
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
@@ -32,15 +39,11 @@
             NSLog(@"User log in failed: %@", error.localizedDescription);
         } else {
             NSLog(@"User logged in successfully");
-            
             [self performSegueWithIdentifier:@"logedInSegue" sender:self];
         }
     }];
 }
 
-- (IBAction)tapLogin:(id)sender {
-    [self loginUser];
-}
 
 
 /*
