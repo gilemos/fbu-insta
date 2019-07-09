@@ -10,6 +10,7 @@
 #import "Parse/Parse.h"
 #import "Post.h"
 #import "PostCell.h"
+#import "PostDetailsViewController.h"
 
 @interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *homeFeedTableView;
@@ -77,15 +78,21 @@
     [refreshControl endRefreshing];
 }
 
-/*
-#pragma mark - Navigation
 
+#pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if([segue.identifier isEqualToString:@"segueToPostDetails"]) {
+        [self postDetaislSegue:segue sender:sender];
+    }
 }
-*/
 
+- (void)postDetaislSegue: (UIStoryboardSegue *)segue sender:(id)sender {
+    PostDetailsViewController *postDetailsViewController = [segue destinationViewController];
+    PostCell *tappedCell = sender;
+    Post *curPost = tappedCell.post;
+    postDetailsViewController.post  = curPost;
+}
 
 @end
