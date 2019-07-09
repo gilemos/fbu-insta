@@ -21,11 +21,21 @@
 #pragma mark - View LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     //Setting up background image
     UIImage *backgroundImage = [UIImage imageNamed:@"instagramBackground"];
     UIImageView *backgroundImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
     backgroundImageView.image=backgroundImage;
     [self.view insertSubview:backgroundImageView atIndex:0];
+    
+    //Setting the background of the text labels
+    [self.usernameTextField setBackgroundColor:[UIColor clearColor]];
+    [self.passwordTextField setBackgroundColor:[UIColor clearColor]];
+    
+    //Putting borders in the buttom
+    self.loginButton.layer.borderWidth = 0.5f;
+    self.loginButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    
 }
 
 #pragma mark - Buttons Functions
