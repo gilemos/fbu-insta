@@ -38,9 +38,12 @@
     
 }
 
-#pragma mark - Buttons Functions
+#pragma mark - Buttons/taps Functions
 - (IBAction)tapLogin:(id)sender {
     [self loginUser];
+}
+- (IBAction)tapScreen:(id)sender {
+    [self.view endEditing:YES];
 }
 
 #pragma mark - Helper methods
