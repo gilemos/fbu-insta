@@ -8,6 +8,8 @@
 
 #import "PostCell.h"
 #import "Post.h"
+#import <Parse/Parse.h>
+#import "PFImageView.h"
 
 @implementation PostCell
 
@@ -19,7 +21,7 @@
 
 #pragma mark - updating methods
 - (void)refreshData {
-    self.postImage.image = self.post.image;
+    self.postImage.file = self.post.image;
     self.postTextField.text = self.post.caption;
 }
 

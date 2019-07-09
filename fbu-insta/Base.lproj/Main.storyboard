@@ -154,7 +154,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="399.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JdE-2O-QdY">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JdE-2O-QdY" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="317"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -184,7 +184,11 @@
                                 <action selector="tapLogout:" destination="pI6-fn-83J" id="zb6-iD-FSa"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="djT-7k-88h"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="djT-7k-88h">
+                            <connections>
+                                <segue destination="07W-nk-8lj" kind="presentation" id="XtU-yF-8hG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="homeFeedTableView" destination="S3z-zu-bIR" id="MyI-W0-hXp"/>
@@ -224,7 +228,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="vlR-GU-ksp">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="8vJ-ev-JC7"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="8vJ-ev-JC7">
+                            <connections>
+                                <segue destination="pI6-fn-83J" kind="presentation" id="ss7-Sq-QvX"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Share" id="aUG-ip-MUQ">
                             <connections>
                                 <action selector="tapShare:" destination="8Xb-5O-78X" id="oW3-ue-djT"/>
@@ -249,7 +257,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Cun-wH-SuP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MNR-p3-jLA" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="homefeednavigationcontroller" automaticallyAdjustsScrollViewInsets="NO" id="MNR-p3-jLA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5pS-5E-1Ra">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -289,5 +297,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="St9-Ks-4qA"/>
+        <segue reference="WO6-7o-iDY"/>
     </inferredMetricsTieBreakers>
 </document>
