@@ -343,7 +343,7 @@
                     <navigationItem key="navigationItem" id="vlR-GU-ksp">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="8vJ-ev-JC7">
                             <connections>
-                                <segue destination="MNR-p3-jLA" kind="presentation" id="tz5-4N-UNq"/>
+                                <action selector="tapCancel:" destination="8Xb-5O-78X" id="nf1-R7-dvX"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Share" id="aUG-ip-MUQ">
@@ -410,6 +410,6 @@
         <image name="insta_camera_btn" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tz5-4N-UNq"/>
+        <segue reference="7g7-oT-lQn"/>
     </inferredMetricsTieBreakers>
 </document>
