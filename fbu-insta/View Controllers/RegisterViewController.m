@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
 
 @end
 
@@ -22,12 +23,29 @@
 #pragma mark - View lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //Setting up background image
+    UIImage *backgroundImage = [UIImage imageNamed:@"instagramBackground"];
+    UIImageView *backgroundImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
+    backgroundImageView.image=backgroundImage;
+    [self.view insertSubview:backgroundImageView atIndex:0];
+    
+    //Setting the background of the text labels
+    [self.usernameTextField setBackgroundColor:[UIColor clearColor]];
+    [self.passwordTextField setBackgroundColor:[UIColor clearColor]];
+    [self.emailTextField setBackgroundColor:[UIColor clearColor]];
+    
+    //Putting borders in the buttom
+    self.registerButton.layer.borderWidth = 0.5f;
+    self.registerButton.layer.borderColor = [UIColor whiteColor].CGColor;
 }
 
 #pragma mark - Buttons functions
 - (IBAction)tapRegister:(id)sender {
     [self registerUser];
+}
+- (IBAction)tapReturn:(id)sender {
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 #pragma mark - Helper methods
