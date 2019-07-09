@@ -24,6 +24,8 @@
 		710CD36E22D4066C00CD7B0C /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 710CD36D22D4066C00CD7B0C /* Post.m */; };
 		710CD37222D40F3300CD7B0C /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 710CD37122D40F3300CD7B0C /* PostCell.m */; };
 		710CD37522D4FA3700CD7B0C /* PostDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710CD37422D4FA3700CD7B0C /* PostDetailsViewController.m */; };
+		710CD37822D558A600CD7B0C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710CD37722D558A600CD7B0C /* ProfileViewController.m */; };
+		710CD37B22D558B900CD7B0C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 710CD37A22D558B900CD7B0C /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,10 @@
 		710CD37122D40F3300CD7B0C /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		710CD37322D4FA3700CD7B0C /* PostDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostDetailsViewController.h; sourceTree = "<group>"; };
 		710CD37422D4FA3700CD7B0C /* PostDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostDetailsViewController.m; sourceTree = "<group>"; };
+		710CD37622D558A600CD7B0C /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		710CD37722D558A600CD7B0C /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		710CD37922D558B900CD7B0C /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		710CD37A22D558B900CD7B0C /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		735E037281E66A5F214C3287 /* Pods-fbu-instaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbu-instaUITests.release.xcconfig"; path = "Target Support Files/Pods-fbu-instaUITests/Pods-fbu-instaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		877CCE362347027CA01F9F56 /* Pods-fbu-instaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbu-instaTests.release.xcconfig"; path = "Target Support Files/Pods-fbu-instaTests/Pods-fbu-instaTests.release.xcconfig"; sourceTree = "<group>"; };
 		A419B8FEDD9FE967A2CED75F /* Pods-fbu-instaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbu-instaTests.debug.xcconfig"; path = "Target Support Files/Pods-fbu-instaTests/Pods-fbu-instaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +197,8 @@
 				710CD36922D4039200CD7B0C /* ComposeViewController.m */,
 				710CD37322D4FA3700CD7B0C /* PostDetailsViewController.h */,
 				710CD37422D4FA3700CD7B0C /* PostDetailsViewController.m */,
+				710CD37622D558A600CD7B0C /* ProfileViewController.h */,
+				710CD37722D558A600CD7B0C /* ProfileViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -200,6 +208,8 @@
 			children = (
 				710CD36C22D4066C00CD7B0C /* Post.h */,
 				710CD36D22D4066C00CD7B0C /* Post.m */,
+				710CD37922D558B900CD7B0C /* User.h */,
+				710CD37A22D558B900CD7B0C /* User.m */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -450,7 +460,9 @@
 				710CD33922D3DFDF00CD7B0C /* main.m in Sources */,
 				710CD32B22D3DFDE00CD7B0C /* AppDelegate.m in Sources */,
 				710CD37222D40F3300CD7B0C /* PostCell.m in Sources */,
+				710CD37822D558A600CD7B0C /* ProfileViewController.m in Sources */,
 				710CD36A22D4039200CD7B0C /* ComposeViewController.m in Sources */,
+				710CD37B22D558B900CD7B0C /* User.m in Sources */,
 				710CD35D22D3E71B00CD7B0C /* LoginViewController.m in Sources */,
 				710CD36422D3E7F500CD7B0C /* HomeFeedViewController.m in Sources */,
 				710CD36E22D4066C00CD7B0C /* Post.m in Sources */,

@@ -103,6 +103,57 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="-250.44642857142856"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Y3h-jr-Lsw">
+            <objects>
+                <tabBarController id="d5C-Uf-vOY" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ivG-Rj-F5k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MNR-p3-jLA" kind="relationship" relationship="viewControllers" id="ifK-QQ-QgK"/>
+                        <segue destination="YzV-ha-n7P" kind="relationship" relationship="viewControllers" id="bJP-CA-29Q"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HtT-Ah-tsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1151" y="-837"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="FYa-8j-UJ5">
+            <objects>
+                <navigationController id="YzV-ha-n7P" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile_tab" id="QEz-oP-Xtp"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eQh-FV-Nc6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LHj-q8-ACH" kind="relationship" relationship="rootViewController" id="ppD-yO-RHe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ie-Nj-8Hs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2320" y="-837"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Yz9-Jj-OsD">
+            <objects>
+                <viewController id="LHj-q8-ACH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2TL-3f-NQp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="H5e-p1-yFF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mdI-uT-elf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h1y-et-ghw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3078" y="-837"/>
+        </scene>
         <!--Register View Controller-->
         <scene sceneID="dff-MW-6Yh">
             <objects>
@@ -437,10 +488,11 @@
             </objects>
             <point key="canvasLocation" x="3723" y="104"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Home Timeline-->
         <scene sceneID="Cun-wH-SuP">
             <objects>
                 <navigationController storyboardIdentifier="AuthenticatedViewController" automaticallyAdjustsScrollViewInsets="NO" id="MNR-p3-jLA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home Timeline" image="feed_tab" id="sL0-Mz-D79"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5pS-5E-1Ra">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -478,10 +530,12 @@
         <image name="1200px-Instagram_logo.svg" width="1200" height="429"/>
         <image name="87-877828_save-the-heart-by-ofirma85-instagram-like-icon" width="880" height="804"/>
         <image name="Heart-512" width="512" height="512"/>
+        <image name="feed_tab" width="25" height="25"/>
         <image name="image_placeholder" width="375" height="375"/>
         <image name="insta_camera_btn" width="25" height="25"/>
+        <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7g7-oT-lQn"/>
+        <segue reference="ifK-QQ-QgK"/>
     </inferredMetricsTieBreakers>
 </document>
