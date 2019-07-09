@@ -7,9 +7,11 @@
 //
 
 #import "PostDetailsViewController.h"
+#import <Parse/Parse.h>
+#import "PFimageView.h"
 
 @interface PostDetailsViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *postImage;
+@property (weak, nonatomic) IBOutlet PFImageView *postImage;
 @property (weak, nonatomic) IBOutlet UITextField *caption;
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
 
@@ -19,9 +21,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self refreshPost];
     // Do any additional setup after loading the view.
 }
 
+-(void)refreshPost {
+    self.postImage.file = self.post.image;
+    self.caption.text = self.post.caption;
+}
 /*
 #pragma mark - Navigation
 
