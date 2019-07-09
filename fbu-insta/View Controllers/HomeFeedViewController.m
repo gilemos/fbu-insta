@@ -24,6 +24,10 @@
     //implementing the deledate and datasource for the tableview
     self.homeFeedTableView.delegate = self;
     self.homeFeedTableView.dataSource = self;
+    //putting the refresh at the top
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.homeFeedTableView insertSubview:refreshControl atIndex:0];
     //Constructing the array of posts
     [self fetchPosts];
 }
@@ -65,6 +69,12 @@
             NSLog(@"There was a problem getting the posts");
         }
     }];
+}
+
+-(void)beginRefresh: (UIRefreshControl *) refreshControl{
+    [self fetchPosts];
+    [self.homeFeedTableView reloadData];
+    [refreshControl endRefreshing];
 }
 
 /*
