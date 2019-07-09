@@ -11,10 +11,11 @@
 #import "Post.h"
 #import "PostCell.h"
 #import "PostDetailsViewController.h"
+#import "ComposeViewController.h"
 
-@interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource, composeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *homeFeedTableView;
-@property (strong, nonatomic) NSArray *arrayOfPosts;
+@property (strong, nonatomic) NSMutableArray *arrayOfPosts;
 @end
 
 @implementation HomeFeedViewController
@@ -44,6 +45,11 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.arrayOfPosts.count;
+}
+
+#pragma mark - compose view controller protocol
+- (void)getNewPost:(nonnull Post *)post {
+    [self.arrayOfPosts addObject:post];
 }
 
 #pragma mark - Top Buttons
