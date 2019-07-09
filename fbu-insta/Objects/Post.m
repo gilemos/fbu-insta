@@ -31,6 +31,11 @@
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
     
+    //Getting the time of posting
+    NSDate *now = [NSDate date];
+    newPost.timeOfPosting = now;
+    
+    //Posting
     [newPost saveInBackgroundWithBlock: completion];
 }
 

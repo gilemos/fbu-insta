@@ -9,6 +9,7 @@
 #import "PostDetailsViewController.h"
 #import <Parse/Parse.h>
 #import "PFimageView.h"
+#import "DateTools.h"
 
 @interface PostDetailsViewController ()
 @property (weak, nonatomic) IBOutlet PFImageView *postImage;
@@ -28,6 +29,7 @@
 -(void)refreshPost {
     self.postImage.file = self.post.image;
     self.caption.text = self.post.caption;
+    self.timestampLabel.text = self.post.timeOfPosting.shortTimeAgoSinceNow;
 }
 /*
 #pragma mark - Navigation
