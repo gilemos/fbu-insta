@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PostDetailsViewController : UIViewController
-@property(strong, nonatomic) Post* post;
+@property(strong, nonatomic) Post* tappedPost;
 
 @end
 

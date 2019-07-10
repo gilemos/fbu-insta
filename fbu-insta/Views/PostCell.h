@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet PFImageView *postImage;
 @property (weak, nonatomic) IBOutlet UITextField *postTextField;
 @property(strong, nonatomic) Post *post;
+@property (weak, nonatomic) IBOutlet UIButton *loveButton;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfLikesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 -(void)refreshData;
 @end

@@ -11,15 +11,11 @@
 #import "PFimageView.h"
 #import "DateTools.h"
 #import "Post.h"
+#import "PostCell.h"
 
-@interface PostDetailsViewController ()
-@property (weak, nonatomic) IBOutlet PFImageView *postImage;
-@property (weak, nonatomic) IBOutlet UIImageView *userProfileImage;
-@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeStampLabel;
-@property (weak, nonatomic) IBOutlet UITextField *caption;
-@property (weak, nonatomic) IBOutlet UIButton *loveButton;
-@property (weak, nonatomic) IBOutlet UILabel *numberOfLovesLabel;
+@interface PostDetailsViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *postDetailsTableView;
+
 @end
 
 @implementation PostDetailsViewController
@@ -27,44 +23,21 @@
 #pragma mark - View Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self refreshPost];
+    self.postDetailsTableView.delegate = self;
+    self.postDetailsTableView.dataSource = self;
 }
 
-#pragma mark - refresh methods
--(void)refreshPost {
-    self.postImage.file = self.post.image;
-    self.caption.text = self.post.caption;
-    self.usernameLabel.text = self.post.author.username;
-    self.timeStampLabel.text = self.post.timeOfPosting.shortTimeAgoSinceNow;
-    self.numberOfLovesLabel.text = [NSString stringWithFormat:@"<3 %@ likes", self.post.likeCount];
-    if(self.post.isLiked) {
-        self.loveButton.selected = YES;
-    }
+#pragma mark - UITableViewDataSource Protocol
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    PostCell *cell = (PostCell*) [tableView dequeueReusableCellWithIdentifier:@"postcell" forIndexPath:indexPath];
+    cell.post = self.tappedPost;
+    [cell refreshData];
+    return cell;
 }
 
-
-#pragma mark - User interaction buttons
-- (IBAction)didTapLove:(id)sender {
-    if(self.post.isLiked) {
-        self.post.isLiked = NO;
-        self.loveButton.selected = NO;
-        
-        int likeCountInt = [self.post.likeCount intValue];
-        likeCountInt -= 1;
-        self.post.likeCount = [NSNumber numberWithInt:likeCountInt];
-    }
-    else {
-        self.post.isLiked = YES;
-        self.loveButton.selected = YES;
-        
-        int likeCountInt = [self.post.likeCount intValue];
-        likeCountInt += 1;
-        self.post.likeCount = [NSNumber numberWithInt:likeCountInt];
-    }
-    [Post updatePost:self.post withLikeCount:self.post.likeCount];
-    [self refreshPost];
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
 }
-
 /*
 #pragma mark - Navigation
 
@@ -74,5 +47,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end

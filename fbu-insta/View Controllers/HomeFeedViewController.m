@@ -138,7 +138,7 @@ InfiniteScrollActivityView* loadingMoreView;
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@"segueToPostDetails"]) {
+    if([segue.identifier isEqualToString:@"seguetodetails"]) {
         [self postDetaislSegue:segue sender:sender];
     }
 }
@@ -147,7 +147,7 @@ InfiniteScrollActivityView* loadingMoreView;
     PostDetailsViewController *postDetailsViewController = [segue destinationViewController];
     PostCell *tappedCell = sender;
     Post *curPost = tappedCell.post;
-    postDetailsViewController.post  = curPost;
+    postDetailsViewController.tappedPost = curPost;
 }
 
 @end
