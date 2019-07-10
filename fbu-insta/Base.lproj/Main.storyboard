@@ -359,7 +359,7 @@
                                             <outlet property="postTextField" destination="noY-wA-kHy" id="xfl-fQ-fSt"/>
                                             <outlet property="profilePhoto" destination="2gB-FC-bxU" id="ZBG-i5-NDY"/>
                                             <outlet property="userNameLabel" destination="dbZ-c7-ONn" id="z33-vV-fdq"/>
-                                            <segue destination="CNb-YV-uBG" kind="presentation" identifier="segueToPostDetails" trigger="accessoryAction" id="ExV-Ch-Afw"/>
+                                            <segue destination="CNb-YV-uBG" kind="presentation" identifier="segueToPostDetails" id="BIp-uM-jiA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

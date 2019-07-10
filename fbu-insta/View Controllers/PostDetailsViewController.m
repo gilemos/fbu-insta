@@ -30,7 +30,7 @@
 }
 
 -(void)refreshPost {
-    self.postImage.file = self.post.image;
+    //self.postImage.file = self.post.image;
     self.caption.text = self.post.caption;
     self.timestampLabel.text = self.post.timeOfPosting.shortTimeAgoSinceNow;
     self.numberOfLovesLabel.text = [NSString stringWithFormat:@"<3 %@ likes", self.post.likeCount];
