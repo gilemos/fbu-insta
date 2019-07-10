@@ -13,12 +13,14 @@
 #import "PostDetailsViewController.h"
 #import "ComposeViewController.h"
 #import "InfiniteScrollActivityView.h"
+#import "MBProgressHUD.h"
 
-@interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
+@interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, MBProgressHUDDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *homeFeedTableView;
 @property (strong, nonatomic) NSMutableArray *arrayOfPosts;
 @property (assign, nonatomic) BOOL isMoreDataLoading;
 @property (nonatomic) int numOfPosts;
+@property (strong, nonatomic) MBProgressHUD *HUD;
 @end
 
 @implementation HomeFeedViewController
@@ -34,6 +36,7 @@ InfiniteScrollActivityView* loadingMoreView;
    
     [self setTopRefreshControl];
     [self setInfiniteScrollingRefreshControl];
+    [self addMBProgress];
     
     [self fetchPosts];
 }
@@ -100,7 +103,12 @@ InfiniteScrollActivityView* loadingMoreView;
     [self.homeFeedTableView reloadData];
     [refreshControl endRefreshing];
 }
-
+-(void)addMBProgress {
+    self.HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    self.HUD.delegate = self;
+    self.HUD.label.text = @"Loading";
+    [self.homeFeedTableView addSubview:self.HUD];
+}
 #pragma mark - Helper Methods for Loading
 - (void)fetchPosts {
     PFQuery *postQuery = [Post query];
@@ -117,6 +125,7 @@ InfiniteScrollActivityView* loadingMoreView;
             NSLog(@"There was a problem getting the posts");
         }
          [self.homeFeedTableView reloadData];
+         [self.HUD hideAnimated:NO];
     }];
 }
 
