@@ -23,7 +23,8 @@
     self.postImage.file = self.post.image;
     [self.postImage loadInBackground];
     self.postTextField.text = self.post.caption;
-    //self.profilePhoto.file = self.post.author.profilePicture;
+    self.profilePhoto.file = self.post.author[@"profilePicture"];
+    [self.profilePhoto loadInBackground];
     self.userNameLabel.text = self.post.author.username;
 }
 

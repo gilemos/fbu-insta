@@ -158,9 +158,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="127.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJ1-cV-RA3">
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJ1-cV-RA3" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="102" height="87"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="QCF-wg-oLv" appends="YES" id="fWA-fp-83v"/>
+                                                    </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uiq-Rw-kzm">
                                                     <rect key="frame" x="121" y="30" width="101" height="27"/>
@@ -195,7 +199,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BEa-rh-3Tn">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BEa-rh-3Tn" customClass="PFImageView">
                                                     <rect key="frame" x="3" y="7" width="54" height="54"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="54" id="gBJ-Bi-BMb"/>
@@ -235,12 +239,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="H5e-p1-yFF"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile Page" id="mdI-uT-elf"/>
+                    <navigationItem key="navigationItem" title="Profile Page" id="mdI-uT-elf">
+                        <barButtonItem key="rightBarButtonItem" title="Save Changes" id="vf9-zS-aSu">
+                            <connections>
+                                <action selector="tapSaveChanges:" destination="LHj-q8-ACH" id="p9q-qQ-6ae"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="profileTableView" destination="bjF-BC-W3J" id="6Fa-2f-84c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1y-et-ghw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="QCF-wg-oLv">
+                    <connections>
+                        <action selector="tapPicture:" destination="LHj-q8-ACH" id="JTm-BX-kGI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3043" y="-1392"/>
         </scene>
@@ -379,7 +394,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2gB-FC-bxU">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2gB-FC-bxU" customClass="PFImageView">
                                                     <rect key="frame" x="3" y="7" width="54" height="54"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="54" id="3PH-Jt-ayl"/>

@@ -65,5 +65,9 @@
                                  }];
 }
 
++ (void)updateProfileofUser:(PFUser *)user withImage:(UIImage *)image withCompletion:(PFBooleanResultBlock  _Nullable)completion {
+    user[@"profilePicture"] = [self getPFFileFromImage:image];
+    [user saveInBackground];
+}
 @end
 

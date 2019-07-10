@@ -10,10 +10,12 @@
 #import "ProfileCell.h"
 #import "PostCell.h"
 #import "Post.h"
+#import "PFImageView.h"
 
-@interface ProfileViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ProfileViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *profileTableView;
 @property (strong, nonatomic) NSMutableArray *arrayOfPosts;
+@property (strong, nonatomic) UIImage *curProfileImage;
 @end
 
 @implementation ProfileViewController
@@ -32,6 +34,9 @@
     if(indexPath.row == 0) {
         ProfileCell *cell = (ProfileCell*) [tableView dequeueReusableCellWithIdentifier:@"profilecell" forIndexPath:indexPath];
         cell.author = self.author;
+        if(self.curProfileImage != nil) {
+            cell.profilePhotoForTesting = [Post getPFFileFromImage:self.curProfileImage];
+        }
         [cell refreshData];
         return cell;
     }
@@ -51,6 +56,53 @@
         return 128;
     }
     return 560;
+}
+
+#pragma mark - UIIMagePicker protocol
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    
+    self.curProfileImage = [self resizeImage:originalImage withSize:CGSizeMake(400, 400)];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.profileTableView reloadData];
+}
+
+#pragma mark - Methods to set Profile Image
+- (IBAction)tapPicture:(id)sender {
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else {
+        NSLog(@"Camera 🚫 available so we will use photo library instead");
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+- (IBAction)tapSaveChanges:(id)sender {
+    if(self.curProfileImage != nil) {
+        [Post updateProfileofUser:self.author withImage:self.curProfileImage withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+            NSLog(@"New profile image saved");
+        }];
+    }
 }
 
 #pragma mark - Methods to fetch data

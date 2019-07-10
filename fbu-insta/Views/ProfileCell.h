@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
+#import "PFImageView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ProfileCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *userProfilePhoto;
+@property (weak, nonatomic) IBOutlet PFImageView *userProfilePhoto;
+@property (weak, nonatomic) IBOutlet PFFileObject *profilePhotoForTesting;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (nonatomic, strong) PFUser *author;
 
