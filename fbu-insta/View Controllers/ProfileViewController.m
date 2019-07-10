@@ -35,6 +35,7 @@
         [cell refreshData];
         return cell;
     }
+    
     PostCell *cell = (PostCell*) [tableView dequeueReusableCellWithIdentifier:@"postcell" forIndexPath:indexPath];
     cell.post = self.arrayOfPosts[indexPath.row  - 1];
     [cell refreshData];

@@ -12,7 +12,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    //[self getCurrentUser];
     [self refreshData];
 }
 
@@ -20,16 +19,8 @@
     self.usernameLabel.text = self.author.username;
 }
 
-//-(void)getCurrentUser {
-//    if(self.author == nil){
-//        self.author = [PFUser currentUser];
-//    }
-//}
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

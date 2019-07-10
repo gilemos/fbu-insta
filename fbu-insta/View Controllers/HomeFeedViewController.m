@@ -12,25 +12,28 @@
 #import "PostCell.h"
 #import "PostDetailsViewController.h"
 #import "ComposeViewController.h"
+#import "InfiniteScrollActivityView.h"
 
-@interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource>
-//UIScrollViewDelegate>
+@interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *homeFeedTableView;
 @property (strong, nonatomic) NSMutableArray *arrayOfPosts;
 @property (assign, nonatomic) BOOL isMoreDataLoading;
+@property (nonatomic) int numOfPosts;
 @end
 
 @implementation HomeFeedViewController
+InfiniteScrollActivityView* loadingMoreView;
 
 #pragma mark - View lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.homeFeedTableView.delegate = self;
     self.homeFeedTableView.dataSource = self;
+    self.numOfPosts = 20;
+    self.isMoreDataLoading = NO;
    
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
-    [self.homeFeedTableView insertSubview:refreshControl atIndex:0];
+    [self setTopRefreshControl];
+    [self setInfiniteScrollingRefreshControl];
     
     [self fetchPosts];
 }
@@ -47,19 +50,24 @@
     return self.arrayOfPosts.count;
 }
 
-//#pragma mark - UIScrollViewDelegate protocol
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    if(!self.isMoreDataLoading){
-//        int scrollViewContentHeight = self.homeFeedTableView.contentSize.height;
-//        int scrollOffsetThreshold = scrollViewContentHeight - self.homeFeedTableView.bounds.size.height;
-//
-//        if(scrollView.contentOffset.y > scrollOffsetThreshold && self.homeFeedTableView.isDragging) {
-//            self.isMoreDataLoading = true;
-//
-//            // ... Code to load more results ...
-//        }
-//    }
-//}
+#pragma mark - UIScrollViewDelegate protocol
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(!self.isMoreDataLoading){
+        int scrollViewContentHeight = self.homeFeedTableView.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - self.homeFeedTableView.bounds.size.height;
+
+        if(scrollView.contentOffset.y > scrollOffsetThreshold && self.homeFeedTableView.isDragging) {
+            self.isMoreDataLoading = true;
+            
+            // Update position of loadingMoreView, and start loading indicator
+            CGRect frame = CGRectMake(0, self.homeFeedTableView.contentSize.height, self.homeFeedTableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+            loadingMoreView.frame = frame;
+            [loadingMoreView startAnimating];
+            
+            [self loadMoreData];
+        }
+    }
+}
 
 #pragma mark - Top Buttons
 - (IBAction)tapLogout:(id)sender {
@@ -69,13 +77,37 @@
     [self performSegueWithIdentifier:@"logOutSegue" sender:nil];
 }
 
+#pragma mark - Helper methods for refresh controls
+-(void)setInfiniteScrollingRefreshControl {
+    CGRect frame = CGRectMake(0, self.homeFeedTableView.contentSize.height, self.homeFeedTableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+    loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
+    loadingMoreView.hidden = true;
+    [self.homeFeedTableView addSubview:loadingMoreView];
+    
+    UIEdgeInsets insets = self.homeFeedTableView.contentInset;
+    insets.bottom += InfiniteScrollActivityView.defaultHeight;
+    self.homeFeedTableView.contentInset = insets;
+}
+
+-(void)setTopRefreshControl {
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.homeFeedTableView insertSubview:refreshControl atIndex:0];
+}
+
+-(void)beginRefresh: (UIRefreshControl *) refreshControl{
+    [self fetchPosts];
+    [self.homeFeedTableView reloadData];
+    [refreshControl endRefreshing];
+}
+
 #pragma mark - Helper Methods for Loading
 - (void)fetchPosts {
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
     [postQuery includeKey:@"profilePicture"];
-    postQuery.limit = 20;
+    postQuery.limit = self.numOfPosts;
     
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
@@ -88,16 +120,12 @@
     }];
 }
 
--(void)beginRefresh: (UIRefreshControl *) refreshControl{
+-(void)loadMoreData {
+    self.isMoreDataLoading = false;
+    self.numOfPosts += 20;
+    [loadingMoreView stopAnimating];
     [self fetchPosts];
-    [self.homeFeedTableView reloadData];
-    [refreshControl endRefreshing];
 }
-
-//-(void)loadMoreData{
-//    
-//}
-
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

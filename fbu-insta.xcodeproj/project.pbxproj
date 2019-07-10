@@ -26,6 +26,7 @@
 		710CD37522D4FA3700CD7B0C /* PostDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710CD37422D4FA3700CD7B0C /* PostDetailsViewController.m */; };
 		710CD37822D558A600CD7B0C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710CD37722D558A600CD7B0C /* ProfileViewController.m */; };
 		710CD37E22D55A4300CD7B0C /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 710CD37D22D55A4300CD7B0C /* ProfileCell.m */; };
+		7141A2D322D67408009FFA6E /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7141A2D222D67408009FFA6E /* InfiniteScrollActivityView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		710CD37722D558A600CD7B0C /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		710CD37C22D55A4300CD7B0C /* ProfileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileCell.h; sourceTree = "<group>"; };
 		710CD37D22D55A4300CD7B0C /* ProfileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCell.m; sourceTree = "<group>"; };
+		7141A2D122D67408009FFA6E /* InfiniteScrollActivityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollActivityView.h; sourceTree = "<group>"; };
+		7141A2D222D67408009FFA6E /* InfiniteScrollActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollActivityView.m; sourceTree = "<group>"; };
 		735E037281E66A5F214C3287 /* Pods-fbu-instaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbu-instaUITests.release.xcconfig"; path = "Target Support Files/Pods-fbu-instaUITests/Pods-fbu-instaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		877CCE362347027CA01F9F56 /* Pods-fbu-instaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbu-instaTests.release.xcconfig"; path = "Target Support Files/Pods-fbu-instaTests/Pods-fbu-instaTests.release.xcconfig"; sourceTree = "<group>"; };
 		A419B8FEDD9FE967A2CED75F /* Pods-fbu-instaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbu-instaTests.debug.xcconfig"; path = "Target Support Files/Pods-fbu-instaTests/Pods-fbu-instaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 				710CD37122D40F3300CD7B0C /* PostCell.m */,
 				710CD37C22D55A4300CD7B0C /* ProfileCell.h */,
 				710CD37D22D55A4300CD7B0C /* ProfileCell.m */,
+				7141A2D122D67408009FFA6E /* InfiniteScrollActivityView.h */,
+				7141A2D222D67408009FFA6E /* InfiniteScrollActivityView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -460,6 +465,7 @@
 				710CD37E22D55A4300CD7B0C /* ProfileCell.m in Sources */,
 				710CD33922D3DFDF00CD7B0C /* main.m in Sources */,
 				710CD32B22D3DFDE00CD7B0C /* AppDelegate.m in Sources */,
+				7141A2D322D67408009FFA6E /* InfiniteScrollActivityView.m in Sources */,
 				710CD37222D40F3300CD7B0C /* PostCell.m in Sources */,
 				710CD37822D558A600CD7B0C /* ProfileViewController.m in Sources */,
 				710CD36A22D4039200CD7B0C /* ComposeViewController.m in Sources */,
