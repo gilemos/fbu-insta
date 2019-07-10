@@ -17,6 +17,8 @@
 
 -(void)refreshData {
     self.usernameLabel.text = self.author.username;
+    self.userProfilePhoto.layer.cornerRadius = 30;;
+    self.userProfilePhoto.clipsToBounds = YES;
     if(self.profilePhotoForTesting != nil) {
         self.userProfilePhoto.file = self.profilePhotoForTesting;
     }
