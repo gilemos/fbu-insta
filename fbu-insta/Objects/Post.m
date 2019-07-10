@@ -18,12 +18,13 @@
 @dynamic likeCount;
 @dynamic commentCount;
 @dynamic timeOfPosting;
+@dynamic isLiked;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
 }
 
-+ (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
++ (void)postUserImage:(UIImage * _Nullable )image withCaption:(NSString * _Nullable)caption withCompletion:(PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
     newPost.image = [self getPFFileFromImage:image];
@@ -39,7 +40,7 @@
     [newPost saveInBackgroundWithBlock: completion];
 }
 
-+ (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
++ (PFFileObject *)getPFFileFromImage:(UIImage * _Nullable)image {
 
     if (!image) {
         return nil;
@@ -54,4 +55,15 @@
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
 
++ (void)updatePost:(Post *)post withLikeCount:(NSNumber *)likeCount {
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    
+    [query getObjectInBackgroundWithId:post.objectId
+                                 block:^(PFObject *myPost, NSError *error) {
+                                     myPost[@"likeCount"] = likeCount;
+                                     [myPost saveInBackground];
+                                 }];
+}
+
 @end
+

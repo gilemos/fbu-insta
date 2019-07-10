@@ -424,6 +424,9 @@
                                 </constraints>
                                 <state key="normal" title="loveButton" image="Heart-512"/>
                                 <state key="selected" image="87-877828_save-the-heart-by-ofirma85-instagram-like-icon"/>
+                                <connections>
+                                    <action selector="didTapLove:" destination="CNb-YV-uBG" eventType="touchUpInside" id="Jls-R2-kCe"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSZ-rF-mYC">
                                 <rect key="frame" x="7" y="575" width="414" height="17"/>

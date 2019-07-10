@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Parse/Parse.h"
+#import "Post.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,8 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *likeCount;
 @property (nonatomic, strong) NSNumber *commentCount;
 @property (nonatomic, strong) NSDate *timeOfPosting;
+@property (nonatomic) bool isLiked;
 
-+ (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
++ (void)postUserImage:( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
++ (void)updatePost:(Post *)post withLikeCount:(NSNumber *)likeCount;
 @end
+
 
 NS_ASSUME_NONNULL_END
