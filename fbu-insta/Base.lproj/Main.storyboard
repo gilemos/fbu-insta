@@ -504,7 +504,7 @@
                                             <outlet property="profilePhoto" destination="2gB-FC-bxU" id="ZBG-i5-NDY"/>
                                             <outlet property="timeLabel" destination="bPJ-Il-ich" id="wHi-lC-IZA"/>
                                             <outlet property="userNameLabel" destination="dbZ-c7-ONn" id="z33-vV-fdq"/>
-                                            <segue destination="CNb-YV-uBG" kind="presentation" identifier="seguetodetails" id="yID-SQ-5g5"/>
+                                            <segue destination="CNb-YV-uBG" kind="show" identifier="seguetodetails" id="yID-SQ-5g5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
