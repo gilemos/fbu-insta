@@ -14,8 +14,10 @@
 #import "ComposeViewController.h"
 
 @interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource>
+//UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *homeFeedTableView;
 @property (strong, nonatomic) NSMutableArray *arrayOfPosts;
+@property (assign, nonatomic) BOOL isMoreDataLoading;
 @end
 
 @implementation HomeFeedViewController
@@ -45,6 +47,20 @@
     return self.arrayOfPosts.count;
 }
 
+//#pragma mark - UIScrollViewDelegate protocol
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    if(!self.isMoreDataLoading){
+//        int scrollViewContentHeight = self.homeFeedTableView.contentSize.height;
+//        int scrollOffsetThreshold = scrollViewContentHeight - self.homeFeedTableView.bounds.size.height;
+//
+//        if(scrollView.contentOffset.y > scrollOffsetThreshold && self.homeFeedTableView.isDragging) {
+//            self.isMoreDataLoading = true;
+//
+//            // ... Code to load more results ...
+//        }
+//    }
+//}
+
 #pragma mark - Top Buttons
 - (IBAction)tapLogout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
@@ -53,14 +69,14 @@
     [self performSegueWithIdentifier:@"logOutSegue" sender:nil];
 }
 
-#pragma mark - Helper methods
+#pragma mark - Helper Methods for Loading
 - (void)fetchPosts {
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
+    [postQuery includeKey:@"profilePicture"];
     postQuery.limit = 20;
     
-    // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
             self.arrayOfPosts = [NSMutableArray arrayWithArray:posts];
@@ -77,6 +93,10 @@
     [self.homeFeedTableView reloadData];
     [refreshControl endRefreshing];
 }
+
+//-(void)loadMoreData{
+//    
+//}
 
 
 #pragma mark - Navigation
