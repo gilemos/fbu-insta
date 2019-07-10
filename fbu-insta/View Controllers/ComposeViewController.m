@@ -21,26 +21,20 @@
 #pragma mark - View lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 #pragma mark - UIIMagePicker protocol
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
-    // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-    
-    //Resizing the image and setting it to property
-    // self.curImage.image = [self resizeImage:originalImage withSize:CGSizeMake(400, 400)];
+
     self.imageView.image = [self resizeImage:originalImage withSize:CGSizeMake(400, 400)];
-    // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Methods to take a picture
 - (IBAction)tapPicture:(id)sender {
-    //Instatiating the UIImagePickerController
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
@@ -72,7 +66,6 @@
 - (IBAction)tapShare:(id)sender {
     if(self.imageView.image != nil) {
         [Post postUserImage:self.imageView.image withCaption:self.textField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-            //[self.delegate getNewPost:Post];
             [self dismissViewControllerAnimated:NO completion:nil];
         }];
     }

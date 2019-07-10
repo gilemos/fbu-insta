@@ -27,7 +27,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self refreshPost];
-    // Do any additional setup after loading the view.
 }
 
 -(void)refreshPost {

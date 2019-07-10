@@ -13,7 +13,7 @@
 #import "PostDetailsViewController.h"
 #import "ComposeViewController.h"
 
-@interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource, composeViewControllerDelegate>
+@interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *homeFeedTableView;
 @property (strong, nonatomic) NSMutableArray *arrayOfPosts;
 @end
@@ -43,22 +43,6 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.arrayOfPosts.count;
-}
-
-//#pragma mark - UITableViewDataSource protocol
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return 2;
-//}
-
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:HeaderViewIdentifier];
-//    header.textLabel.text = [data[section] firstObject];
-//    return header;
-//}
-
-#pragma mark - compose view controller protocol
-- (void)getNewPost:(nonnull Post *)post {
-    [self.arrayOfPosts addObject:post];
 }
 
 #pragma mark - Top Buttons
@@ -96,7 +80,6 @@
 
 
 #pragma mark - Navigation
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"segueToPostDetails"]) {
         [self postDetaislSegue:segue sender:sender];
