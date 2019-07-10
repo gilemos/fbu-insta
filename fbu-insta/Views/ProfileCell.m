@@ -12,8 +12,19 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    //[self getCurrentUser];
+    [self refreshData];
 }
+
+-(void)refreshData {
+    self.usernameLabel.text = self.author.username;
+}
+
+//-(void)getCurrentUser {
+//    if(self.author == nil){
+//        self.author = [PFUser currentUser];
+//    }
+//}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

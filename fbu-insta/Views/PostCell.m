@@ -16,7 +16,6 @@
 #pragma mark - View lifecycle
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 #pragma mark - updating methods
