@@ -58,7 +58,7 @@
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
     [postQuery includeKey:@"profilePicture"];
-    //[postQuery whereKey:@"author" equalTo:self.author];
+    [postQuery whereKey:@"author" equalTo:self.author];
     postQuery.limit = 20;
     
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
