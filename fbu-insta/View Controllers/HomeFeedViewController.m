@@ -23,14 +23,13 @@
 #pragma mark - View lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //implementing the deledate and datasource for the tableview
     self.homeFeedTableView.delegate = self;
     self.homeFeedTableView.dataSource = self;
-    //putting the refresh at the top
+   
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
     [self.homeFeedTableView insertSubview:refreshControl atIndex:0];
-    //Constructing the array of posts
+    
     [self fetchPosts];
 }
 
@@ -39,13 +38,23 @@
     PostCell *cell = (PostCell*) [tableView dequeueReusableCellWithIdentifier:@"postcell" forIndexPath:indexPath];
     cell.post = self.arrayOfPosts[indexPath.row];
     [cell refreshData];
-    
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.arrayOfPosts.count;
 }
+
+//#pragma mark - UITableViewDataSource protocol
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    return 2;
+//}
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:HeaderViewIdentifier];
+//    header.textLabel.text = [data[section] firstObject];
+//    return header;
+//}
 
 #pragma mark - compose view controller protocol
 - (void)getNewPost:(nonnull Post *)post {
@@ -70,11 +79,12 @@
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
-            [self.arrayOfPosts arrayByAddingObjectsFromArray:posts];
+            self.arrayOfPosts = [NSMutableArray arrayWithArray:posts];
         }
         else {
             NSLog(@"There was a problem getting the posts");
         }
+         [self.homeFeedTableView reloadData];
     }];
 }
 
@@ -88,7 +98,6 @@
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
     if([segue.identifier isEqualToString:@"segueToPostDetails"]) {
         [self postDetaislSegue:segue sender:sender];
     }

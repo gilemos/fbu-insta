@@ -8,9 +8,10 @@
 
 #import "ComposeViewController.h"
 #import "Post.h"
+#import "Parse/Parse.h"
+#import "PFImageView.h"
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-@property(strong, nonatomic) UIImage *curImage;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @end
@@ -28,11 +29,11 @@
     
     // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     //Resizing the image and setting it to property
-    self.curImage = [self resizeImage:originalImage withSize:CGSizeMake(400, 400)];
-    self.imageView.image = self.curImage;
+    // self.curImage.image = [self resizeImage:originalImage withSize:CGSizeMake(400, 400)];
+    self.imageView.image = [self resizeImage:originalImage withSize:CGSizeMake(400, 400)];
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -69,8 +70,8 @@
 
 #pragma mark - Top Screen Buttons
 - (IBAction)tapShare:(id)sender {
-    if(self.curImage != nil) {
-        [Post postUserImage:self.curImage withCaption:self.textField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    if(self.imageView.image != nil) {
+        [Post postUserImage:self.imageView.image withCaption:self.textField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
             //[self.delegate getNewPost:Post];
             [self dismissViewControllerAnimated:NO completion:nil];
         }];

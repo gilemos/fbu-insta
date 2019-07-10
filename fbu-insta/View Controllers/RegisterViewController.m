@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
-
 @end
 
 @implementation RegisterViewController
@@ -50,21 +49,16 @@
 
 #pragma mark - Helper methods
 - (void)registerUser {
-    // initialize a user object
     PFUser *newUser = [PFUser user];
-    
-    // set user properties
     newUser.username = self.usernameTextField.text;
     newUser.email = self.emailTextField.text;
     newUser.password = self.passwordTextField.text;
     
-    // call sign up function on the object
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error != nil) {
             NSLog(@"Error: %@", error.localizedDescription);
         } else {
             NSLog(@"User registered successfully");
-            
             [self performSegueWithIdentifier:@"logedInSegue" sender:self];
         }
     }];

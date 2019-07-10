@@ -21,15 +21,16 @@
 
 #pragma mark - updating methods
 - (void)refreshData {
+    NSLog(@"got to refreshdata");
     self.postImage.file = self.post.image;
     self.postTextField.text = self.post.caption;
+    //self.profilePhoto.file = self.post.author.profilePicture;
+    self.userNameLabel.text = self.post.author.username;
 }
 
 #pragma mark - Helper methods
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end
