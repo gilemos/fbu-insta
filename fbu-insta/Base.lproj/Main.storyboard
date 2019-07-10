@@ -359,7 +359,7 @@
                                             <outlet property="postTextField" destination="noY-wA-kHy" id="xfl-fQ-fSt"/>
                                             <outlet property="profilePhoto" destination="2gB-FC-bxU" id="ZBG-i5-NDY"/>
                                             <outlet property="userNameLabel" destination="dbZ-c7-ONn" id="z33-vV-fdq"/>
-                                            <segue destination="CNb-YV-uBG" kind="presentation" identifier="segueToPostDetails" id="BIp-uM-jiA"/>
+                                            <segue destination="CNb-YV-uBG" kind="show" identifier="segueToPostDetails" id="BIp-uM-jiA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -417,7 +417,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJS-63-48z">
-                                <rect key="frame" x="79" y="92" width="99" height="26"/>
+                                <rect key="frame" x="79" y="136" width="99" height="26"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
