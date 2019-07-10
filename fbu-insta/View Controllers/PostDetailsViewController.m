@@ -24,11 +24,13 @@
 
 @implementation PostDetailsViewController
 
+#pragma mark - View Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self refreshPost];
 }
 
+#pragma mark - refresh methods
 -(void)refreshPost {
     self.postImage.file = self.post.image;
     self.caption.text = self.post.caption;

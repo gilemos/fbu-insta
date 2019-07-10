@@ -40,7 +40,6 @@
     cell.post = self.arrayOfPosts[indexPath.row  - 1];
     [cell refreshData];
     return cell;
-    
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -54,6 +53,7 @@
     return 560;
 }
 
+#pragma mark - Methods to fetch data
 -(void)fetchPosts{
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
