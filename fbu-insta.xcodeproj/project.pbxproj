@@ -224,9 +224,9 @@
 		710CD36F22D40F0C00CD7B0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7141A2D422D6AF4B009FFA6E /* MakeCommentCell.h */,
 				7141A2D722D6AF63009FFA6E /* SeeCommentsCell.h */,
 				7141A2D822D6AF63009FFA6E /* SeeCommentsCell.m */,
+				7141A2D422D6AF4B009FFA6E /* MakeCommentCell.h */,
 				7141A2D522D6AF4B009FFA6E /* MakeCommentCell.m */,
 				710CD37022D40F3300CD7B0C /* PostCell.h */,
 				710CD37122D40F3300CD7B0C /* PostCell.m */,
