@@ -65,6 +65,21 @@
                                  }];
 }
 
++ (void)updatePost:(Post *)post withComment:(NSString *)comment {
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    
+    [query getObjectInBackgroundWithId:post.objectId
+                                 block:^(PFObject *myPost, NSError *error) {
+                                     [myPost[@"comments"] addObject:comment];
+                                     
+                                     int numCommentsInt = [myPost[@"commentCount"] intValue];
+                                     numCommentsInt += 1;
+                                     myPost[@"commentCount"] = [NSNumber numberWithInt:numCommentsInt];
+                                     
+                                     [myPost saveInBackground];
+                                 }];
+}
+
 + (void)updateProfileofUser:(PFUser *)user withImage:(UIImage *)image withCompletion:(PFBooleanResultBlock  _Nullable)completion {
     user[@"profilePicture"] = [self getPFFileFromImage:image];
     [user saveInBackground];
