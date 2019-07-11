@@ -45,8 +45,13 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Make profile photo appear correctly
+2. Post comments
+3. Post isLiked
+4. Make friends profile screen
+5. Segment design
+6. Segment types of cell
+7. Change the place of HUD
 
 ## Video Walkthrough
 
