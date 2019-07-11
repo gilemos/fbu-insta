@@ -10,11 +10,13 @@
 
 @implementation ProfileCell
 
+#pragma mark - View Lifecycle
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self refreshData];
 }
 
+#pragma mark - Methods to update data
 -(void)refreshData {
     self.usernameLabel.text = self.author.username;
     if(self.profilePhotoForTesting != nil) {
@@ -26,6 +28,7 @@
     [self.userProfilePhoto loadInBackground];
 }
 
+#pragma mark - Helper methods
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }

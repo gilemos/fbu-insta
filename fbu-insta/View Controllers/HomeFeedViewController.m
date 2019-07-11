@@ -33,7 +33,7 @@ InfiniteScrollActivityView* loadingMoreView;
     self.homeFeedTableView.dataSource = self;
     self.numOfPosts = 20;
     self.isMoreDataLoading = NO;
-   
+    
     [self setTopRefreshControl];
     [self setInfiniteScrollingRefreshControl];
     [self addMBProgress];
@@ -58,7 +58,7 @@ InfiniteScrollActivityView* loadingMoreView;
     if(!self.isMoreDataLoading){
         int scrollViewContentHeight = self.homeFeedTableView.contentSize.height;
         int scrollOffsetThreshold = scrollViewContentHeight - self.homeFeedTableView.bounds.size.height;
-
+        
         if(scrollView.contentOffset.y > scrollOffsetThreshold && self.homeFeedTableView.isDragging) {
             self.isMoreDataLoading = true;
             
@@ -98,11 +98,6 @@ InfiniteScrollActivityView* loadingMoreView;
     [self.homeFeedTableView insertSubview:refreshControl atIndex:0];
 }
 
--(void)beginRefresh: (UIRefreshControl *) refreshControl{
-    [self fetchPosts];
-    [self.homeFeedTableView reloadData];
-    [refreshControl endRefreshing];
-}
 -(void)addMBProgress {
     self.HUD = [[MBProgressHUD alloc] initWithView:self.view];
     self.HUD.delegate = self;
@@ -124,16 +119,22 @@ InfiniteScrollActivityView* loadingMoreView;
         else {
             NSLog(@"There was a problem getting the posts");
         }
-         [self.homeFeedTableView reloadData];
-         [self.HUD hideAnimated:NO];
+        [self.homeFeedTableView reloadData];
+        [self.HUD hideAnimated:NO];
     }];
 }
 
--(void)loadMoreData {
+- (void)loadMoreData {
     self.isMoreDataLoading = false;
     self.numOfPosts += 20;
     [loadingMoreView stopAnimating];
     [self fetchPosts];
+}
+
+- (void)beginRefresh: (UIRefreshControl *) refreshControl {
+    [self fetchPosts];
+    [self.homeFeedTableView reloadData];
+    [refreshControl endRefreshing];
 }
 
 #pragma mark - Navigation

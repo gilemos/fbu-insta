@@ -23,20 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //Setting up background image
-    UIImage *backgroundImage = [UIImage imageNamed:@"instagramBackground"];
-    UIImageView *backgroundImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
-    backgroundImageView.image=backgroundImage;
-    [self.view insertSubview:backgroundImageView atIndex:0];
-    
-    //Setting the background of the text labels
-    [self.usernameTextField setBackgroundColor:[UIColor clearColor]];
-    [self.passwordTextField setBackgroundColor:[UIColor clearColor]];
-    [self.emailTextField setBackgroundColor:[UIColor clearColor]];
-    
-    //Putting borders in the buttom
-    self.registerButton.layer.borderWidth = 0.5f;
-    self.registerButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    [self setButtonsDesign];
+    [self setLabelsDesign];
+    [self setBackgoundDesign];
 }
 
 #pragma mark - Buttons functions
@@ -45,6 +34,25 @@
 }
 - (IBAction)tapReturn:(id)sender {
     [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+#pragma mark - Design helper methods
+- (void)setBackgoundDesign {
+    UIImage *backgroundImage = [UIImage imageNamed:@"instagramBackground"];
+    UIImageView *backgroundImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
+    backgroundImageView.image=backgroundImage;
+    [self.view insertSubview:backgroundImageView atIndex:0];
+}
+
+- (void)setButtonsDesign {
+    self.registerButton.layer.borderWidth = 0.5f;
+    self.registerButton.layer.borderColor = [UIColor whiteColor].CGColor;
+}
+
+- (void)setLabelsDesign {
+    [self.usernameTextField setBackgroundColor:[UIColor clearColor]];
+    [self.passwordTextField setBackgroundColor:[UIColor clearColor]];
+    [self.emailTextField setBackgroundColor:[UIColor clearColor]];
 }
 
 #pragma mark - Helper methods
@@ -65,13 +73,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

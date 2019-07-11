@@ -20,10 +20,8 @@
 @dynamic timeOfPosting;
 @dynamic isLiked;
 
-+ (nonnull NSString *)parseClassName {
-    return @"Post";
-}
 
+#pragma mark - Posting methods
 + (void)postUserImage:(UIImage * _Nullable )image withCaption:(NSString * _Nullable)caption withCompletion:(PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
@@ -33,28 +31,13 @@
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
     
-    //Getting the time of posting
     NSDate *now = [NSDate date];
     newPost.timeOfPosting = now;
     
     [newPost saveInBackgroundWithBlock: completion];
 }
 
-+ (PFFileObject *)getPFFileFromImage:(UIImage * _Nullable)image {
-
-    if (!image) {
-        return nil;
-    }
-    
-    NSData *imageData = UIImagePNGRepresentation(image);
-    
-    if (!imageData) {
-        return nil;
-    }
-    
-    return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
-}
-
+#pragma mark - Updating methods
 + (void)updatePost:(Post *)post withLikeCount:(NSNumber *)likeCount {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     
@@ -71,11 +54,9 @@
     [query getObjectInBackgroundWithId:post.objectId
                                  block:^(PFObject *myPost, NSError *error) {
                                      [myPost[@"comments"] addObject:comment];
-                                     
                                      int numCommentsInt = [myPost[@"commentCount"] intValue];
                                      numCommentsInt += 1;
                                      myPost[@"commentCount"] = [NSNumber numberWithInt:numCommentsInt];
-                                     
                                      [myPost saveInBackground];
                                  }];
 }
@@ -83,6 +64,25 @@
 + (void)updateProfileofUser:(PFUser *)user withImage:(UIImage *)image withCompletion:(PFBooleanResultBlock  _Nullable)completion {
     user[@"profilePicture"] = [self getPFFileFromImage:image];
     [user saveInBackground];
+}
+
+#pragma mark - Overall helper methods
++ (PFFileObject *)getPFFileFromImage:(UIImage * _Nullable)image {
+    if (!image) {
+        return nil;
+    }
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
+    
+    if (!imageData) {
+        return nil;
+    }
+    
+    return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
+}
+
++ (nonnull NSString *)parseClassName {
+    return @"Post";
 }
 @end
 
