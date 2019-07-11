@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Comments.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SeeCommentsCell : UITableViewCell
+@property (strong, nonatomic) Comments *currentComment;
+@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+
+-(void)refreshData;
 
 @end
 

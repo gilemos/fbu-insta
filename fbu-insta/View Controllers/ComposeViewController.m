@@ -28,7 +28,7 @@
     
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-
+    
     self.imageView.image = [self resizeImage:originalImage withSize:CGSizeMake(400, 400)];
     [self dismissViewControllerAnimated:YES completion:nil];
 }

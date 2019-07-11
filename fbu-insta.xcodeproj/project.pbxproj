@@ -29,6 +29,8 @@
 		7141A2D322D67408009FFA6E /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7141A2D222D67408009FFA6E /* InfiniteScrollActivityView.m */; };
 		7141A2D622D6AF4B009FFA6E /* MakeCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7141A2D522D6AF4B009FFA6E /* MakeCommentCell.m */; };
 		7141A2D922D6AF63009FFA6E /* SeeCommentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7141A2D822D6AF63009FFA6E /* SeeCommentsCell.m */; };
+		7141A2DF22D78F17009FFA6E /* instaDesign.m in Sources */ = {isa = PBXBuildFile; fileRef = 7141A2DE22D78F17009FFA6E /* instaDesign.m */; };
+		7141A2E222D797DC009FFA6E /* Comments.m in Sources */ = {isa = PBXBuildFile; fileRef = 7141A2E122D797DC009FFA6E /* Comments.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,10 @@
 		7141A2D522D6AF4B009FFA6E /* MakeCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeCommentCell.m; sourceTree = "<group>"; };
 		7141A2D722D6AF63009FFA6E /* SeeCommentsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeeCommentsCell.h; sourceTree = "<group>"; };
 		7141A2D822D6AF63009FFA6E /* SeeCommentsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeeCommentsCell.m; sourceTree = "<group>"; };
+		7141A2DD22D78F17009FFA6E /* instaDesign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = instaDesign.h; sourceTree = "<group>"; };
+		7141A2DE22D78F17009FFA6E /* instaDesign.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = instaDesign.m; sourceTree = "<group>"; };
+		7141A2E022D797DC009FFA6E /* Comments.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Comments.h; sourceTree = "<group>"; };
+		7141A2E122D797DC009FFA6E /* Comments.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comments.m; sourceTree = "<group>"; };
 		735E037281E66A5F214C3287 /* Pods-fbu-instaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbu-instaUITests.release.xcconfig"; path = "Target Support Files/Pods-fbu-instaUITests/Pods-fbu-instaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		877CCE362347027CA01F9F56 /* Pods-fbu-instaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbu-instaTests.release.xcconfig"; path = "Target Support Files/Pods-fbu-instaTests/Pods-fbu-instaTests.release.xcconfig"; sourceTree = "<group>"; };
 		A419B8FEDD9FE967A2CED75F /* Pods-fbu-instaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbu-instaTests.debug.xcconfig"; path = "Target Support Files/Pods-fbu-instaTests/Pods-fbu-instaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +223,10 @@
 			children = (
 				710CD36C22D4066C00CD7B0C /* Post.h */,
 				710CD36D22D4066C00CD7B0C /* Post.m */,
+				7141A2DD22D78F17009FFA6E /* instaDesign.h */,
+				7141A2DE22D78F17009FFA6E /* instaDesign.m */,
+				7141A2E022D797DC009FFA6E /* Comments.h */,
+				7141A2E122D797DC009FFA6E /* Comments.m */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -482,7 +492,9 @@
 				710CD36A22D4039200CD7B0C /* ComposeViewController.m in Sources */,
 				710CD35D22D3E71B00CD7B0C /* LoginViewController.m in Sources */,
 				710CD36422D3E7F500CD7B0C /* HomeFeedViewController.m in Sources */,
+				7141A2E222D797DC009FFA6E /* Comments.m in Sources */,
 				710CD36E22D4066C00CD7B0C /* Post.m in Sources */,
+				7141A2DF22D78F17009FFA6E /* instaDesign.m in Sources */,
 				7141A2D622D6AF4B009FFA6E /* MakeCommentCell.m in Sources */,
 				710CD37522D4FA3700CD7B0C /* PostDetailsViewController.m in Sources */,
 			);

@@ -21,7 +21,7 @@
 @dynamic isLiked;
 
 
-#pragma mark - Posting methods
+#pragma mark - Posting new things
 + (void)postUserImage:(UIImage * _Nullable )image withCaption:(NSString * _Nullable)caption withCompletion:(PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
@@ -48,17 +48,17 @@
                                  }];
 }
 
-+ (void)updatePost:(Post *)post withComment:(NSString *)comment {
++ (void)incrementCommentCountOfPost:(Post *)post{
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     
     [query getObjectInBackgroundWithId:post.objectId
                                  block:^(PFObject *myPost, NSError *error) {
-                                     [myPost[@"comments"] addObject:comment];
-                                     int numCommentsInt = [myPost[@"commentCount"] intValue];
-                                     numCommentsInt += 1;
-                                     myPost[@"commentCount"] = [NSNumber numberWithInt:numCommentsInt];
+                                     int commentCountInt = [myPost[@"commentCount"] intValue];
+                                     commentCountInt += 1;
+                                     myPost[@"commentCount"] = [NSNumber numberWithInt:commentCountInt];
                                      [myPost saveInBackground];
                                  }];
+ 
 }
 
 + (void)updateProfileofUser:(PFUser *)user withImage:(UIImage *)image withCompletion:(PFBooleanResultBlock  _Nullable)completion {

@@ -14,10 +14,10 @@
 #import "PostCell.h"
 #import "MakeCommentCell.h"
 #import "SeeCommentsCell.h"
+#import "Comments.h"
 
 @interface PostDetailsViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *postDetailsTableView;
-
 @end
 
 @implementation PostDetailsViewController
@@ -27,6 +27,7 @@
     [super viewDidLoad];
     self.postDetailsTableView.delegate = self;
     self.postDetailsTableView.dataSource = self;
+    [self getCommentsFromPost];
 }
 
 #pragma mark - UITableViewDataSource Protocol
@@ -42,13 +43,39 @@
         cell.post = self.tappedPost;
         return cell;
     }
-    //    SeeCommentsCell *cell = (SeeCommentsCell *)[tableView dequeueReusableCellWithIdentifier:@"seecommentscell" forIndexPath:indexPath];
-    return nil;
-    
+    SeeCommentsCell *cell = (SeeCommentsCell *)[tableView dequeueReusableCellWithIdentifier:@"seecommentscell" forIndexPath:indexPath];
+    cell.currentComment = self.arrayOfComments[indexPath.row - 2];
+    [cell refreshData];
+    return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return ([self.tappedPost.commentCount intValue] + 2);
+    return (self.arrayOfComments.count + 2);
+}
+
+#pragma mark - Getting data methods
+- (void)getCommentsFromPost {
+    
+    PFQuery *commentQuery = [Comments query];
+    [commentQuery orderByDescending:@"createdAt"];
+    [commentQuery includeKey:@"commentText"];
+    [commentQuery includeKey:@"postID"];
+    [commentQuery whereKey:@"postID" equalTo:self.tappedPost.objectId];
+    commentQuery.limit = 20;
+    
+    [commentQuery findObjectsInBackgroundWithBlock:^(NSArray<Comments *> * _Nullable comments, NSError * _Nullable error) {
+        if (comments) {
+            //[self.arrayOfComments addObjectsFromArray:comments];
+            self.arrayOfComments = (NSMutableArray *) comments;
+        }
+        else {
+            NSLog(@"There was a problem getting the comments");
+        }
+        [self.postDetailsTableView reloadData];
+    }];
+}
+- (IBAction)didTapPost:(id)sender {
+    [self getCommentsFromPost];
 }
 /*
  #pragma mark - Navigation

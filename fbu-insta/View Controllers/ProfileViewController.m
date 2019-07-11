@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *profileTableView;
 @property (strong, nonatomic) NSMutableArray *arrayOfPosts;
 @property (strong, nonatomic) UIImage *curProfileImage;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveChangesButton;
+@property (strong, nonatomic) NSMutableArray *toolbarButtons;
 @end
 
 @implementation ProfileViewController
@@ -25,6 +27,11 @@
     [super viewDidLoad];
     self.profileTableView.delegate = self;
     self.profileTableView.dataSource = self;
+    
+    self.toolbarButtons = [self.toolbarItems mutableCopy];
+    [self.toolbarButtons removeObject:self.saveChangesButton];
+    [self setToolbarItems:self.toolbarButtons animated:NO];
+    
     [self getCurrentUser];
     [self fetchPosts];
 }
@@ -35,7 +42,12 @@
         ProfileCell *cell = (ProfileCell*) [tableView dequeueReusableCellWithIdentifier:@"profilecell" forIndexPath:indexPath];
         cell.author = self.author;
         if(self.curProfileImage != nil) {
-            cell.profilePhotoForTesting = [Post getPFFileFromImage:self.curProfileImage];
+            cell.userProfilePhoto.file = [Post getPFFileFromImage:self.curProfileImage];
+            [cell.userProfilePhoto loadInBackground];
+        }
+        else {
+            cell.userProfilePhoto.file = self.author[@"ProfilePicture"];
+            [cell.userProfilePhoto loadInBackground];
         }
         [cell refreshData];
         return cell;
@@ -69,7 +81,7 @@
     [self.profileTableView reloadData];
 }
 
-#pragma mark - Methods to set Profile Image
+#pragma mark - Methods to set profile image
 - (IBAction)tapPicture:(id)sender {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
@@ -82,6 +94,10 @@
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
     [self presentViewController:imagePickerVC animated:YES completion:nil];
+    if (![self.toolbarButtons containsObject:self.saveChangesButton]) {
+        [self.toolbarButtons addObject:self.saveChangesButton];
+        [self setToolbarItems:self.toolbarButtons animated:YES];
+    }
 }
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {

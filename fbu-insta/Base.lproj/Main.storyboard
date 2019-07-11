@@ -298,6 +298,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="profileTableView" destination="bjF-BC-W3J" id="6Fa-2f-84c"/>
+                        <outlet property="saveChangesButton" destination="vf9-zS-aSu" id="zlV-ok-3q3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1y-et-ghw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -673,8 +674,8 @@
                                                     </constraints>
                                                     <state key="normal" title="Post"/>
                                                     <connections>
-                                                        <action selector="didTapPost:" destination="Koq-pj-Wo8" eventType="touchUpInside" id="aD3-OP-oRu"/>
-                                                        <action selector="postButton:" destination="Koq-pj-Wo8" eventType="touchUpInside" id="AvK-hg-wg4"/>
+                                                        <action selector="didTapPost:" destination="CNb-YV-uBG" eventType="touchUpInside" id="ATK-pS-WDf"/>
+                                                        <action selector="didTapPost:" destination="iny-0k-v3U" eventType="touchUpInside" id="awI-3b-adz"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -690,22 +691,25 @@
                                             <outlet property="commentField" destination="D6v-mm-d22" id="DXL-iA-8WI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="96" id="eg8-CP-dec" customClass="SeeCommentsCell" customModule="seecommentscell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="seecommentscell" rowHeight="96" id="eg8-CP-dec" customClass="SeeCommentsCell">
                                         <rect key="frame" x="0.0" y="671" width="414" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eg8-CP-dec" id="zH0-hD-psj">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="95.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rp0-kk-v2i">
-                                                    <rect key="frame" x="29" y="11" width="365" height="60"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFJ-j3-E0Y">
+                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="XFJ-j3-E0Y" id="9ph-jg-VAc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

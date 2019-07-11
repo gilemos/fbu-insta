@@ -12,7 +12,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+}
+
+-(void)refreshData {
+    self.commentLabel.text = self.currentComment[@"commentText"];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

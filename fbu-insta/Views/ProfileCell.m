@@ -19,13 +19,6 @@
 #pragma mark - Methods to update data
 -(void)refreshData {
     self.usernameLabel.text = self.author.username;
-    if(self.profilePhotoForTesting != nil) {
-        self.userProfilePhoto.file = self.profilePhotoForTesting;
-    }
-    else {
-        self.userProfilePhoto.file = self.author[@"profilePicture"];
-    }
-    [self.userProfilePhoto loadInBackground];
 }
 
 #pragma mark - Helper methods

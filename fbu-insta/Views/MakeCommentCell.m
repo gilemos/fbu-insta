@@ -8,6 +8,7 @@
 
 #import "MakeCommentCell.h"
 #import "Post.h"
+#import "Comments.h"
 
 @implementation MakeCommentCell
 
@@ -20,7 +21,13 @@
 #pragma mark - Post method
 - (IBAction)didTapPost:(id)sender {
     NSString *comment = self.commentField.text;
-    [Post updatePost:self.post withComment:comment];
+    if(comment != nil) {
+        [Comments postComment:comment toPost:self.post withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+            NSLog(@"Comment posted");
+            self.commentField.text = nil;
+            [Post incrementCommentCountOfPost:self.post];
+        }];
+    }
 }
 
 #pragma mark - Support methods
