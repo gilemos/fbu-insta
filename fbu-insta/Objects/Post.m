@@ -9,7 +9,6 @@
 #import "Post.h"
 
 @implementation Post
-
 @dynamic postID;
 @dynamic userID;
 @dynamic author;
@@ -48,7 +47,7 @@
                                  }];
 }
 
-+ (void)incrementCommentCountOfPost:(Post *)post{
++ (void)incrementCommentCountOfPost:(Post *)post {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     
     [query getObjectInBackgroundWithId:post.objectId
@@ -71,13 +70,10 @@
     if (!image) {
         return nil;
     }
-    
     NSData *imageData = UIImagePNGRepresentation(image);
-    
     if (!imageData) {
         return nil;
     }
-    
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
 

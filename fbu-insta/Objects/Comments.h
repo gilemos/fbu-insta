@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray *arrayOfComments;
 
 + (void)postComment:(NSString * _Nullable )comment toPost:(Post *)post withCompletion:(PFBooleanResultBlock  _Nullable)completion;
-+ (void)getCommentsFromPost:(Post *)post intoArray:(NSMutableArray *)array;
+//+ (void)getCommentsFromPost:(Post *)post intoArray:(NSMutableArray *)array;
 @end
 
 NS_ASSUME_NONNULL_END

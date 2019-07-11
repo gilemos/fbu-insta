@@ -10,18 +10,18 @@
 
 @implementation SeeCommentsCell
 
+#pragma mark - View lifecycle
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
 
--(void)refreshData {
+#pragma mark - Data updating
+- (void)refreshData {
     self.commentLabel.text = self.currentComment[@"commentText"];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state
 }
 
 @end

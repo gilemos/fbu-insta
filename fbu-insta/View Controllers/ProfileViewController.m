@@ -34,7 +34,7 @@
 
 #pragma mark - UITableViewDataSource protocol
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    if(indexPath.row == 0) {
+    if(indexPath.row == 0) { //profile header
         ProfileCell *cell = (ProfileCell*) [tableView dequeueReusableCellWithIdentifier:@"profilecell" forIndexPath:indexPath];
         cell.author = self.author;
         if(self.placeholderProfileImage != nil) {
@@ -45,8 +45,7 @@
         }
         [cell refreshData];
         return cell;
-    }
-    
+    } //User posts
     PostCell *cell = (PostCell*) [tableView dequeueReusableCellWithIdentifier:@"postcell" forIndexPath:indexPath];
     cell.post = self.arrayOfPosts[indexPath.row  - 1];
     [cell refreshData];
@@ -61,7 +60,7 @@
     if(indexPath.row == 0) {
         return 86;
     }
-    return 560;
+    return 600;
 }
 
 #pragma mark - UIIMagePicker protocol

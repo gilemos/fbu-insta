@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MakeCommentCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UITextField *commentField;
 @property (strong, nonatomic) Post *post;
-
 @end
 
 NS_ASSUME_NONNULL_END

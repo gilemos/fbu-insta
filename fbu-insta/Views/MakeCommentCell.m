@@ -15,7 +15,6 @@
 #pragma mark - View Lifecycle
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 #pragma mark - Post method
@@ -30,7 +29,7 @@
     }
 }
 
-#pragma mark - Support methods
+#pragma mark - Helper methods
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }

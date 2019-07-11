@@ -270,6 +270,7 @@
                                                 <constraint firstItem="A46-M8-4od" firstAttribute="top" secondItem="BP5-oR-4C5" secondAttribute="bottom" constant="15" id="cr4-3h-cRj"/>
                                                 <constraint firstItem="MC2-uh-nYG" firstAttribute="leading" secondItem="X1c-BL-sLp" secondAttribute="leading" constant="8" id="hsM-SN-Px6"/>
                                                 <constraint firstItem="qJE-se-VBI" firstAttribute="centerY" secondItem="MC2-uh-nYG" secondAttribute="centerY" id="htz-GU-QnS"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WJ4-Hy-IGi" secondAttribute="bottom" constant="5" id="p1S-oF-hfM"/>
                                                 <constraint firstItem="58X-qq-TOi" firstAttribute="centerY" secondItem="qJE-se-VBI" secondAttribute="centerY" id="tXN-Xu-qcV"/>
                                             </constraints>
                                         </tableViewCellContentView>
