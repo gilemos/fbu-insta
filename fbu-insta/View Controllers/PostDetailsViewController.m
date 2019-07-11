@@ -63,6 +63,7 @@
     }
     return 102;
 }
+
 #pragma mark - Getting data methods
 - (void)getCommentsFromPost {
     
@@ -90,7 +91,6 @@
 
 
  #pragma mark - Navigation
- 
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
      if([segue.identifier isEqualToString:@"seguetofriendprofile"]) {
@@ -98,7 +98,7 @@
      }
  }
 
-- (void)friendProfilelSegue: (UIStoryboardSegue *)segue sender:(id)sender {
+- (void)friendProfilelSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     ProfileViewController *profileViewController = [segue destinationViewController];
     PFUser *postUser = self.tappedPost.author;
     profileViewController.author = postUser;

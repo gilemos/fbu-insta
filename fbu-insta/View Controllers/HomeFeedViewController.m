@@ -62,12 +62,9 @@ InfiniteScrollActivityView* loadingMoreView;
         
         if(scrollView.contentOffset.y > scrollOffsetThreshold && self.homeFeedTableView.isDragging) {
             self.isMoreDataLoading = true;
-            
-            // Update position of loadingMoreView, and start loading indicator
             CGRect frame = CGRectMake(0, self.homeFeedTableView.contentSize.height, self.homeFeedTableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
             loadingMoreView.frame = frame;
             [loadingMoreView startAnimating];
-            
             [self loadMoreData];
         }
     }
@@ -82,7 +79,7 @@ InfiniteScrollActivityView* loadingMoreView;
 }
 
 #pragma mark - Helper methods for refresh controls
--(void)setInfiniteScrollingRefreshControl {
+- (void)setInfiniteScrollingRefreshControl {
     CGRect frame = CGRectMake(0, self.homeFeedTableView.contentSize.height, self.homeFeedTableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
     loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
     loadingMoreView.hidden = true;
@@ -93,18 +90,19 @@ InfiniteScrollActivityView* loadingMoreView;
     self.homeFeedTableView.contentInset = insets;
 }
 
--(void)setTopRefreshControl {
+- (void)setTopRefreshControl {
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
     [self.homeFeedTableView insertSubview:refreshControl atIndex:0];
 }
 
--(void)addMBProgress {
+- (void)addMBProgress {
     self.HUD = [[MBProgressHUD alloc] initWithView:self.view];
     self.HUD.delegate = self;
     self.HUD.label.text = @"Loading";
     [self.homeFeedTableView addSubview:self.HUD];
 }
+
 #pragma mark - Helper Methods for Loading
 - (void)fetchPosts {
     PFQuery *postQuery = [Post query];

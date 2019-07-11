@@ -12,9 +12,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PostDetailsViewController : UIViewController
-@property(strong, nonatomic) Post* tappedPost;
+@property(strong, nonatomic) Post *tappedPost;
 @property(strong, nonatomic)NSMutableArray *arrayOfComments;
-
 @end
 
 NS_ASSUME_NONNULL_END
