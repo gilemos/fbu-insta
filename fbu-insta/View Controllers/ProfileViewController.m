@@ -34,22 +34,10 @@
 
 #pragma mark - UITableViewDataSource protocol
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    if(indexPath.row == 0) { //profile header
-        ProfileCell *cell = (ProfileCell*) [tableView dequeueReusableCellWithIdentifier:@"profilecell" forIndexPath:indexPath];
-        cell.author = self.author;
-        if(self.placeholderProfileImage != nil) {
-            cell.profilePhotoFile = [Post getPFFileFromImage:self.placeholderProfileImage];
-        }
-        else {
-            cell.profilePhotoFile = self.author[@"profilePicture"];
-        }
-        [cell refreshData];
-        return cell;
-    } //User posts
-    PostCell *cell = (PostCell*) [tableView dequeueReusableCellWithIdentifier:@"postcell" forIndexPath:indexPath];
-    cell.post = self.arrayOfPosts[indexPath.row  - 1];
-    [cell refreshData];
-    return cell;
+    if(indexPath.row == 0) {
+        return [self makeProfileCellWithTableView:tableView atIndexPath:indexPath];
+    }
+    return [self makePostCellWithTableView:tableView atIndexPath:indexPath];
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -61,6 +49,27 @@
         return 86;
     }
     return 600;
+}
+
+#pragma mark - Methods to make cells
+- (PostCell *)makePostCellWithTableView:(nonnull UITableView *)tableView atIndexPath:(nonnull NSIndexPath *)indexPath {
+    PostCell *cell = (PostCell*) [tableView dequeueReusableCellWithIdentifier:@"postcell" forIndexPath:indexPath];
+    cell.post = self.arrayOfPosts[indexPath.row  - 1];
+    [cell refreshData];
+    return cell;
+}
+
+- (ProfileCell *)makeProfileCellWithTableView:(nonnull UITableView *)tableView atIndexPath:(nonnull NSIndexPath *)indexPath {
+    ProfileCell *cell = (ProfileCell*) [tableView dequeueReusableCellWithIdentifier:@"profilecell" forIndexPath:indexPath];
+    cell.author = self.author;
+    if(self.placeholderProfileImage != nil) {
+        cell.profilePhotoFile = [Post getPFFileFromImage:self.placeholderProfileImage];
+    }
+    else {
+        cell.profilePhotoFile = self.author[@"profilePicture"];
+    }
+    [cell refreshData];
+    return cell;
 }
 
 #pragma mark - UIIMagePicker protocol
