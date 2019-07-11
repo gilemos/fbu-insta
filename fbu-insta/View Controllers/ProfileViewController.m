@@ -15,7 +15,7 @@
 @interface ProfileViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *profileTableView;
 @property (strong, nonatomic) NSMutableArray *arrayOfPosts;
-@property (strong, nonatomic) UIImage *curProfileImage;
+@property (strong, nonatomic) UIImage *placeholderProfileImage;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveChangesButton;
 @property (strong, nonatomic) NSMutableArray *toolbarButtons;
 @end
@@ -28,10 +28,6 @@
     self.profileTableView.delegate = self;
     self.profileTableView.dataSource = self;
     
-    self.toolbarButtons = [self.toolbarItems mutableCopy];
-    [self.toolbarButtons removeObject:self.saveChangesButton];
-    [self setToolbarItems:self.toolbarButtons animated:NO];
-    
     [self getCurrentUser];
     [self fetchPosts];
 }
@@ -41,13 +37,11 @@
     if(indexPath.row == 0) {
         ProfileCell *cell = (ProfileCell*) [tableView dequeueReusableCellWithIdentifier:@"profilecell" forIndexPath:indexPath];
         cell.author = self.author;
-        if(self.curProfileImage != nil) {
-            cell.userProfilePhoto.file = [Post getPFFileFromImage:self.curProfileImage];
-            [cell.userProfilePhoto loadInBackground];
+        if(self.placeholderProfileImage != nil) {
+            cell.profilePhotoFile = [Post getPFFileFromImage:self.placeholderProfileImage];
         }
         else {
-            cell.userProfilePhoto.file = self.author[@"ProfilePicture"];
-            [cell.userProfilePhoto loadInBackground];
+            cell.profilePhotoFile = self.author[@"profilePicture"];
         }
         [cell refreshData];
         return cell;
@@ -76,7 +70,7 @@
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
-    self.curProfileImage = [self resizeImage:originalImage withSize:CGSizeMake(400, 400)];
+    self.placeholderProfileImage = [self resizeImage:originalImage withSize:CGSizeMake(400, 400)];
     [self dismissViewControllerAnimated:YES completion:nil];
     [self.profileTableView reloadData];
 }
@@ -114,9 +108,11 @@
     return newImage;
 }
 - (IBAction)tapSaveChanges:(id)sender {
-    if(self.curProfileImage != nil) {
-        [Post updateProfileofUser:self.author withImage:self.curProfileImage withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    if(self.placeholderProfileImage != nil) {
+        [Post updateProfileofUser:self.author withImage:self.placeholderProfileImage withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
             NSLog(@"New profile image saved");
+            self.placeholderProfileImage = nil;
+            [self.profileTableView reloadData];
         }];
     }
 }

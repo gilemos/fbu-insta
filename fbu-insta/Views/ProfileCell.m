@@ -19,6 +19,8 @@
 #pragma mark - Methods to update data
 -(void)refreshData {
     self.usernameLabel.text = self.author.username;
+    self.userProfilePhoto.file = self.profilePhotoFile;
+    [self.userProfilePhoto loadInBackground];
 }
 
 #pragma mark - Helper methods

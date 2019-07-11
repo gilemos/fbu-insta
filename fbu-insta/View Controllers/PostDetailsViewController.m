@@ -15,6 +15,7 @@
 #import "MakeCommentCell.h"
 #import "SeeCommentsCell.h"
 #import "Comments.h"
+#import "ProfileViewController.h"
 
 @interface PostDetailsViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *postDetailsTableView;
@@ -53,6 +54,15 @@
     return (self.arrayOfComments.count + 2);
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.row == 0) {
+        return 576;
+    }
+    else if(indexPath.row == 1) {
+        return 70;
+    }
+    return 102;
+}
 #pragma mark - Getting data methods
 - (void)getCommentsFromPost {
     
@@ -77,15 +87,22 @@
 - (IBAction)didTapPost:(id)sender {
     [self getCommentsFromPost];
 }
-/*
+
+
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
+     if([segue.identifier isEqualToString:@"seguetofriendprofile"]) {
+         [self friendProfilelSegue:segue sender:sender];
+     }
  }
- */
+
+- (void)friendProfilelSegue: (UIStoryboardSegue *)segue sender:(id)sender {
+    ProfileViewController *profileViewController = [segue destinationViewController];
+    PFUser *postUser = self.tappedPost.author;
+    profileViewController.author = postUser;
+}
 
 
 

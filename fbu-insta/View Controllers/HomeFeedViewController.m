@@ -14,6 +14,7 @@
 #import "ComposeViewController.h"
 #import "InfiniteScrollActivityView.h"
 #import "MBProgressHUD.h"
+#import "ProfileViewController.h"
 
 @interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, MBProgressHUDDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *homeFeedTableView;
