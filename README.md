@@ -38,12 +38,15 @@ The following **additional** features are implemented:
 *About profile screen*
   - [X] User can tap their profile photo and take a picture to make it its new profile picture
   - [X] The new photogram appears as you profile picture momentarily before you click update profile
+
 *About like button*
 - [X] User can like a post in any screen it appears
     - [X] The like button turns red once you tap it
+
 *About comments*
   - [X] Comments show up instantanealy
   - [X] Comment field is emptied as soon as you press comment
+
 *General design*
 - [X] The keyboard disappears when you tap on the screen
 - [X] Auto layout was implemented for all screens
