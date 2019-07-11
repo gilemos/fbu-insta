@@ -28,17 +28,26 @@ The following **optional** features are implemented:
 - User Profiles:
   - [X] Allow the logged in user to add a profile photo
   - [X] Display the profile photo with each post
-  - [ ] Tapping on a post's username or profile photo goes to that user's profile page
-- [ ] User can comment on a post and see all comments for each post in the post details screen.
+  - [X] Tapping on a post's username or profile photo goes to that user's profile page
+- [X] User can comment on a post and see all comments for each post in the post details screen.
 - [X] User can like a post and see number of likes for each post in the post details screen.
 - [ ] Implement a custom camera view.
 
 The following **additional** features are implemented:
 
-- [X] User can tap their profile photo and take a picture to make it its new profile picture
-    - [X] The new photogram appears as you profile picture momentarily before you click update profile
-- [X] User can like and comment a post in any screen it appears
+*About profile screen*
+  - [X] User can tap their profile photo and take a picture to make it its new profile picture
+  - [X] The new photogram appears as you profile picture momentarily before you click update profile
+
+*About like button*
+- [X] User can like a post in any screen it appears
     - [X] The like button turns red once you tap it
+
+*About comments*
+  - [X] Comments show up instantanealy
+  - [X] Comment field is emptied as soon as you press comment
+
+*General design*
 - [X] The keyboard disappears when you tap on the screen
 - [X] Auto layout was implemented for all screens
 
@@ -46,9 +55,9 @@ The following **additional** features are implemented:
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
 1. Make profile photo appear correctly
-2. Post comments
+2. OK
 3. Post isLiked
-4. Make friends profile screen
+4. OK
 5. Segment design
 6. Segment types of cell
 7. Change the place of HUD
